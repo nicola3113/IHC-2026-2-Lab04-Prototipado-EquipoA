@@ -1,0 +1,63 @@
+<prompt_figma_make>
+<role>Eres un diseñador UI/UX senior especializado en gamificación de productos financieros y en
+tablas de clasificación de alta densidad de datos.</role>
+
+<context>Sexta pantalla del prototipo "Ernesto Investing AI", el sitio web de mercado bursátil
+que el Equipo A desarrolla para el curso de Interacción Hombre-Computador de la UNMSM. La
+plataforma incluye una liga de simulación bursátil: cada participante recibe un capital
+simulado de USD 100,000.00 al inicio de la temporada y compite durante doce semanas. El
+público objetivo son estudiantes universitarios e inversores principiantes, de modo que la
+pantalla debe motivar sin inducir a operar en exceso: la competencia se presenta como
+aprendizaje, no como apuesta.</context>
+
+<task>Diseña la pantalla de Leaderboard / Tabla de Posiciones de la liga con los siguientes
+elementos obligatorios:
+1. Reutiliza la barra de navegación superior y el panel lateral izquierdo del Dashboard
+   principal, con el ítem "Leaderboard" marcado como activo.
+2. Encabezado de página con el título "Leaderboard · Liga de Simulación Bursátil" y un
+   subtítulo con la temporada, el número total de participantes y el capital inicial simulado.
+3. Controles de filtrado a la derecha del encabezado: control segmentado de periodo
+   (Diario, Semanal, Mensual, Temporada) y desplegable de liga (Universitaria, Abierta, Cripto).
+4. Podio de tres tarjetas para los primeros puestos, con el primer lugar en el centro y algo
+   más alto que los laterales. Cada tarjeta muestra medalla, nombre, universidad y usuario,
+   puntuación y rentabilidad porcentual. Una franja superior de color distingue oro, plata y
+   bronce.
+5. Tabla de clasificación general con las columnas: puesto, participante (avatar, nombre y
+   usuario), puntuación, valor del portafolio simulado, rentabilidad porcentual, número de
+   operaciones y logros. La fila del usuario que ha iniciado sesión debe quedar resaltada con
+   un fondo azul tenue, una insignia "Tú" y su puesto sobre un distintivo azul, aunque su
+   posición esté lejos de las primeras: el usuario siempre debe poder encontrarse sin buscar.
+6. Columna de logros con insignias cuadradas pequeñas (trofeo, tendencia al alza, racha,
+   diana, diamante), diferenciando las obtenidas de las bloqueadas.
+7. Panel lateral derecho con dos tarjetas: (a) "Tu posición en la liga", con el puesto en
+   cuerpo grande, la variación de puestos respecto de la semana anterior, un minigráfico de
+   área con la evolución del puesto y una cuadrícula de seis métricas (puntuación,
+   rentabilidad, portafolio, operaciones, porcentaje de aciertos y racha actual), más un aviso
+   con los días restantes de temporada; y (b) "Logros", con una cuadrícula de doce insignias
+   donde las no obtenidas aparecen atenuadas al 42 % de opacidad.
+8. Botón secundario "Exportar clasificación" en la cabecera de la tabla.</task>
+
+<style>
+- Reutiliza el sistema de diseño del Dashboard: fondo #F0F2F6, tarjetas blancas, borde #E2E6EE,
+  radio de 12 px y sombra 0 2px 10px rgba(0,0,0,.09).
+- Paleta: azul #1F3864 para encabezados y selección, dorado #C5961A para medallas, insignias y
+  la franja del primer puesto, verde #1B7E34 para rentabilidades positivas y rojo #C62828 para
+  las negativas.
+- Tipografía Inter o Segoe UI en pesos 400, 600 y 700; tipografía monoespaciada Consolas con
+  cifras tabulares para puntuaciones, importes y porcentajes, de modo que las columnas
+  numéricas queden alineadas verticalmente.
+- El podio debe leerse antes que la tabla: más aire, cuerpo tipográfico mayor y color de acento.
+- Efecto hover sutil en las filas de la tabla y en las tarjetas del podio.</style>
+
+<constraints>
+- Escritorio de 1440 × 900 px, sin desplazamiento vertical en la vista inicial.
+- Todos los textos y etiquetas en español.
+- Los importes deben usar separador de miles y dos decimales; los porcentajes, dos decimales y
+  signo explícito.
+- Deben verse al menos ocho filas de clasificación, incluida obligatoriamente la del usuario
+  que ha iniciado sesión.
+- El color no puede ser el único portador de significado: toda variación porcentual debe llevar
+  además el signo + o − delante del número.
+- No inventar datos de participantes reales: usar los nombres del Equipo A como datos de
+  muestra y advertir en la interfaz que las cifras son simuladas.</constraints>
+</prompt_figma_make>

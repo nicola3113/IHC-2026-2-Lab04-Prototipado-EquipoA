@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ernesto Investing AI — Dashboard</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .grid-main{display:grid;grid-template-columns:1fr 296px;gap:16px;height:calc(100% - 118px)}
+  .col-izq{display:flex;flex-direction:column;gap:16px;min-height:0;min-width:0}
+  .chart-card{flex:1;min-height:0;display:flex;flex-direction:column}
+  .chart-body{flex:1;padding:8px 10px 0 12px;min-height:0}
+  .chart-meta{display:flex;gap:26px;padding:8px 16px 11px;border-top:1px solid var(--borde);font-size:12.4px;color:var(--texto-2)}
+  .chart-meta b{color:var(--texto);font-variant-numeric:tabular-nums}
+  .movers-card{height:100%;min-height:0;display:flex;flex-direction:column}
+  .movers-body{flex:1;overflow:hidden}
+  .sp{width:70px;height:24px;flex:0 0 70px}
+  .tabla-card{flex:0 0 auto;overflow:hidden}
+  .acc{display:flex;gap:6px;justify-content:flex-end}
+  .ticker-logo{width:26px;height:26px;border-radius:7px;display:inline-grid;place-items:center;
+    font-size:10.5px;font-weight:800;color:#fff;margin-right:9px;vertical-align:middle}
+  .cel-tk{display:flex;align-items:center}
+  .tabla-card thead th,.tabla-card tbody td{white-space:nowrap}
+  .tabla-card .nm{max-width:186px;overflow:hidden;text-overflow:ellipsis}
+  .tabla-card th,.tabla-card td{padding-left:10px;padding-right:10px}
+  .tabla-card th:first-child,.tabla-card td:first-child{padding-left:16px}
+  .tabla-card th:last-child,.tabla-card td:last-child{padding-right:16px}
+  .tabla-card .acc .btn{padding:0 9px}
+  .tabla-card tbody td{padding-top:6px;padding-bottom:6px}
+  .tabla-card .card-h{padding-top:10px;padding-bottom:10px}
+  .tabla-card thead th{padding-top:7px;padding-bottom:7px}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <a class="logo" href="01_dashboard_claro.html"><span class="mark">EI</span> Ernesto Investing AI</a>
+  <div class="buscador">
+    <svg class="lupa" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="text" placeholder="Buscar ticker, empresa o índice…">
+  </div>
+  <div class="nav-sp"></div>
+  <div class="nav-acc">
+    <a class="tema" href="05_dashboard_oscuro.html" title="Cambiar a modo oscuro"><b class="on">☀</b><b>☾</b></a>
+    <div class="usuario"><span class="avatar">NC</span> Nicolás C.</div>
+  </div>
+</header>
+
+<aside class="sidebar">
+  <div class="side-tit">Navegación</div>
+  <a class="side-it act" href="01_dashboard_claro.html"><span class="ic">▦</span> Dashboard</a>
+  <a class="side-it" href="06_leaderboard.html"><span class="ic">◈</span> Mercados</a>
+  <a class="side-it" href="04_movil_portafolio.html"><span class="ic">▤</span> Portafolio</a>
+  <a class="side-it" href="02_watchlist.html"><span class="ic">★</span> Watchlist</a>
+  <a class="side-it" href="03_trading.html"><span class="ic">⇄</span> Operaciones</a>
+  <a class="side-it" href="03_trading.html"><span class="ic">◷</span> Historial</a>
+  <a class="side-it" href="06_leaderboard.html"><span class="ic">♛</span> Leaderboard</a>
+  <div class="side-sep"></div>
+  <a class="side-it" href="01_dashboard_claro.html"><span class="ic">⚙</span> Configuración</a>
+</aside>
+
+<main class="content">
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="et">Valor del portafolio</div>
+      <div class="vl num">$ 125,430.50</div>
+      <div class="dl"><span class="chip up">▲ 8.45 %</span> últimos 30 días</div>
+    </div>
+    <div class="kpi g">
+      <div class="et">Ganancia del día</div>
+      <div class="vl num pos">+$ 2,450.00</div>
+      <div class="dl"><span class="chip up">▲ 1.26 %</span> vs. cierre anterior</div>
+    </div>
+    <div class="kpi">
+      <div class="et">Poder de compra</div>
+      <div class="vl num">$ 68,420.00</div>
+      <div class="dl">Efectivo disponible para operar</div>
+    </div>
+    <div class="kpi d">
+      <div class="et">Rango en la liga</div>
+      <div class="vl num">#128 <span style="font-size:15px;color:var(--texto-3);font-weight:600">/ 1,024</span></div>
+      <div class="dl"><span class="chip or">▲ 12 puestos</span> esta semana</div>
+    </div>
+  </div>
+
+  <div class="grid-main">
+
+   <div class="col-izq">
+    <section class="card chart-card">
+      <div class="card-h">
+        <div>
+          <h2>BVN · Cía. de Minas Buenaventura S.A.A.</h2>
+          <div class="sub">NYSE · USD · datos diferidos 15 min</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="seg"><b>1D</b><b class="on">1S</b><b>1M</b><b>3M</b><b>1A</b></div>
+          <select class="sel"><option>Velas japonesas</option><option>Línea</option><option>Área</option><option>Barras OHLC</option></select>
+        </div>
+      </div>
+      <div class="chart-body"><img src="assets/velas_claro.svg" alt="Gráfico de velas japonesas de BVN" style="width:100%;height:100%"></div>
+      <div class="chart-meta">
+        <span>Apertura <b>13.92</b></span>
+        <span>Máximo <b>14.41</b></span>
+        <span>Mínimo <b>13.80</b></span>
+        <span>Cierre ant. <b>13.92</b></span>
+        <span>Volumen <b>1,204,880</b></span>
+        <span>Últ. <b class="pos">14.25 (+2.35 %)</b></span>
+      </div>
+    </section>
+    <section class="card tabla-card">
+    <div class="card-h">
+      <div><h2>Mis posiciones</h2><div class="sub">5 activos · valorizados al cierre de la sesión</div></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn sec sm">Exportar CSV</button>
+        <a class="btn pri sm" href="03_trading.html">Nueva orden</a>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Ticker</th><th style="text-align:left">Nombre</th><th class="mono">Cantidad</th><th class="mono">P. promedio</th>
+            <th class="mono">P. actual</th><th class="mono">Var. %</th><th class="mono">P&amp;L</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cel-tk"><span class="ticker-logo" style="background:#1F3864">BVN</span><span class="tk">BVN</span></span></td>
+          <td style="text-align:left" class="nm">Cía. de Minas Buenaventura</td>
+          <td class="mono">120</td><td class="mono">11.42</td><td class="mono">14.25</td>
+          <td class="mono pos">+2.35 %</td><td class="mono pos">+$ 339.60</td>
+          <td><div class="acc"><a class="btn buy sm" href="03_trading.html">Comprar</a><a class="btn sell sm" href="03_trading.html">Vender</a></div></td>
+        </tr>
+        <tr>
+          <td><span class="cel-tk"><span class="ticker-logo" style="background:#5B6478">FSM</span><span class="tk">FSM</span></span></td>
+          <td style="text-align:left" class="nm">Fortuna Silver Mines Inc.</td>
+          <td class="mono">300</td><td class="mono">6.00</td><td class="mono">5.80</td>
+          <td class="mono neg">−1.20 %</td><td class="mono neg">−$ 60.00</td>
+          <td><div class="acc"><a class="btn buy sm" href="03_trading.html">Comprar</a><a class="btn sell sm" href="03_trading.html">Vender</a></div></td>
+        </tr>
+        <tr>
+          <td><span class="cel-tk"><span class="ticker-logo" style="background:#C5961A;color:#241A00">AB</span><span class="tk">ABX.TO</span></span></td>
+          <td style="text-align:left" class="nm">Barrick Gold Corporation</td>
+          <td class="mono">85</td><td class="mono">20.63</td><td class="mono">22.10</td>
+          <td class="mono pos">+0.90 %</td><td class="mono pos">+$ 124.95</td>
+          <td><div class="acc"><a class="btn buy sm" href="03_trading.html">Comprar</a><a class="btn sell sm" href="03_trading.html">Vender</a></div></td>
+        </tr>
+        <tr>
+          <td><span class="cel-tk"><span class="ticker-logo" style="background:#161C27">AA</span><span class="tk">AAPL</span></span></td>
+          <td style="text-align:left" class="nm">Apple Inc.</td>
+          <td class="mono">40</td><td class="mono">176.20</td><td class="mono">198.50</td>
+          <td class="mono pos">+1.05 %</td><td class="mono pos">+$ 892.00</td>
+          <td><div class="acc"><a class="btn buy sm" href="03_trading.html">Comprar</a><a class="btn sell sm" href="03_trading.html">Vender</a></div></td>
+        </tr>
+        <tr>
+          <td><span class="cel-tk"><span class="ticker-logo" style="background:#C62828">TS</span><span class="tk">TSLA</span></span></td>
+          <td style="text-align:left" class="nm">Tesla Inc.</td>
+          <td class="mono">25</td><td class="mono">261.78</td><td class="mono">245.30</td>
+          <td class="mono neg">−2.10 %</td><td class="mono neg">−$ 412.00</td>
+          <td><div class="acc"><a class="btn buy sm" href="03_trading.html">Comprar</a><a class="btn sell sm" href="03_trading.html">Vender</a></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+   </div>
+
+    <section class="card movers-card">
+      <div class="card-h">
+        <h2>Top Movers</h2>
+        <span class="sub">Sesión de hoy</span>
+      </div>
+      <div class="movers-body">
+        <div class="mover"><div class="id"><b>NVDA</b><span>NVIDIA Corp.</span></div>
+          <img class="sp" src="assets/sp_nvda.svg" alt=""><div class="pr"><b class="num">121.40</b><span class="pos">+4.10 %</span></div></div>
+        <div class="mover"><div class="id"><b>BTC-USD</b><span>Bitcoin</span></div>
+          <img class="sp" src="assets/sp_btc.svg" alt=""><div class="pr"><b class="num">63,180.00</b><span class="pos">+2.74 %</span></div></div>
+        <div class="mover"><div class="id"><b>BVN</b><span>Buenaventura</span></div>
+          <img class="sp" src="assets/sp_bvn.svg" alt=""><div class="pr"><b class="num">14.25</b><span class="pos">+2.35 %</span></div></div>
+        <div class="mover"><div class="id"><b>AAPL</b><span>Apple Inc.</span></div>
+          <img class="sp" src="assets/sp_aapl.svg" alt=""><div class="pr"><b class="num">198.50</b><span class="pos">+1.05 %</span></div></div>
+        <div class="mover"><div class="id"><b>TSLA</b><span>Tesla Inc.</span></div>
+          <img class="sp" src="assets/sp_tsla.svg" alt=""><div class="pr"><b class="num">245.30</b><span class="neg">−2.10 %</span></div></div>
+        <div class="mover"><div class="id"><b>FSM</b><span>Fortuna Silver Mines</span></div>
+          <img class="sp" src="assets/sp_fsm.svg" alt=""><div class="pr"><b class="num">5.80</b><span class="neg">−3.22 %</span></div></div>
+              </div>
+    </section>
+
+  </div>
+
+
+</main>
+
+</body>
+</html>

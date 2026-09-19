@@ -1,0 +1,39 @@
+<prompt_figma_make>
+<role>Eres un diseñador UI/UX especializado en plataformas de ejecución de órdenes bursátiles y
+experiencia de trading.</role>
+<context>Pantalla de ejecución de operaciones ("Trade") del prototipo "Ernesto Investing AI". El
+usuario ya seleccionó un activo desde el Dashboard o la Watchlist y ahora quiere ejecutar una
+orden de compra o venta.</context>
+<task>Diseña la pantalla de Trading/Orden con layout de 3 columnas:
+COLUMNA IZQUIERDA (30%):
+1. Panel de información del activo: logo/ícono, nombre completo y ticker, precio actual grande,
+variación del día, rango 52 semanas (barra de progreso), volumen del día, capitalización de
+mercado.
+2. Libro de órdenes simplificado: 5 niveles de compra (bid) en verde y 5 de venta (ask) en rojo,
+con precio y volumen.
+
+COLUMNA CENTRAL (45%):
+3. Gráfico de velas japonesas interactivo con herramientas de dibujo: líneas de tendencia,
+soporte/resistencia, indicadores técnicos (SMA, EMA, RSI, MACD como selector desplegable).
+4. Selector de periodo: 1min, 5min, 15min, 1H, 4H, 1D, 1W.
+
+COLUMNA DERECHA (25%):
+5. Formulario de orden: tabs Compra/Venta (verde/rojo), tipo de orden (Mercado, Límite, Stop,
+Stop-Limit), campos Precio Límite (deshabilitado en orden de mercado), Cantidad (con botones
+25%/50%/75%/100% del poder de compra), costo estimado total, botón grande "Ejecutar Orden".
+6. Historial de órdenes recientes del activo: tabla compacta con Fecha, Tipo, Cantidad, Precio,
+Estado (Ejecutada/Pendiente/Cancelada).</task>
+<style>
+- Fondo del gráfico: #131722 (estilo TradingView dark para el área del chart únicamente).
+- Resto de la interfaz en tema claro: #F0F2F6 fondo, tarjetas blancas.
+- Botón Compra: gradiente verde #1B7E34 a #2E7D32. Botón Venta: gradiente rojo #C62828 a #B71C1C.
+- Tipografía monoespaciada (Consolas) para precios y cantidades numéricas.
+- Transiciones suaves en los tabs Compra/Venta.</style>
+<constraints>
+- Desktop 1440x900px.
+- Textos en español.
+- El formulario de orden debe mostrar validación en tiempo real: si la cantidad excede el poder
+de compra, mostrar mensaje en rojo.
+- Los niveles del libro de órdenes deben tener barras de fondo proporcionales al
+volumen.</constraints>
+</prompt_figma_make>

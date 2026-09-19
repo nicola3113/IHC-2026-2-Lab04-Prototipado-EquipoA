@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ernesto Investing AI — Ejecución de órdenes</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .tr-grid{display:grid;grid-template-columns:30fr 45fr 25fr;gap:14px;height:calc(100% - 76px)}
+  .col{display:flex;flex-direction:column;gap:14px;min-width:0;min-height:0}
+  .card.fl{display:flex;flex-direction:column;min-height:0}
+  .cb{padding:12px 14px}
+
+  /* --- info del activo --- */
+  .ident{display:flex;align-items:center;gap:11px}
+  .ident .lg{width:40px;height:40px;border-radius:10px;background:var(--azul);color:#fff;
+    display:grid;place-items:center;font-weight:800;font-size:13px}
+  .ident h2{font-size:15px;color:var(--texto);line-height:1.2}
+  .ident .tk2{font-family:var(--mono);font-size:12px;color:var(--texto-3)}
+  .precio{font-size:26px;font-weight:700;letter-spacing:-1px;margin-top:11px;font-variant-numeric:tabular-nums}
+  .precio small{font-size:13px;color:var(--texto-3);font-weight:600;letter-spacing:0}
+  .varlin{font-size:13.2px;font-weight:650;margin-top:1px;font-variant-numeric:tabular-nums}
+  .rango{margin-top:13px}
+  .rango .et{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--texto-3);font-weight:700}
+  .barra{height:6px;border-radius:999px;background:#E6EAF2;position:relative;margin:7px 0 4px}
+  .barra i{position:absolute;left:0;top:0;bottom:0;width:62%;border-radius:999px;
+    background:linear-gradient(90deg,#C62828,#C5961A,#1B7E34)}
+  .barra u{position:absolute;left:62%;top:-4px;width:3px;height:14px;background:var(--azul);border-radius:2px}
+  .rango .lim{display:flex;justify-content:space-between;font-size:11.5px;color:var(--texto-2);font-variant-numeric:tabular-nums}
+  .datos{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:13px;
+    border-top:1px solid var(--borde);padding-top:11px}
+  .datos div{display:flex;justify-content:space-between;font-size:11.9px;color:var(--texto-2)}
+  .datos div b{color:var(--texto);font-variant-numeric:tabular-nums}
+
+  /* --- libro de ordenes --- */
+  .lob{flex:1;overflow:hidden;font-family:var(--mono);font-size:12.2px}
+  .lob .fila{display:grid;grid-template-columns:1fr 1fr 1fr;padding:3.5px 15px;position:relative;
+    font-variant-numeric:tabular-nums}
+  .lob .fila span{position:relative;z-index:2;text-align:right}
+  .lob .fila span:first-child{text-align:left}
+  .lob .fila i{position:absolute;right:0;top:0;bottom:0;z-index:1}
+  .lob .ask i{background:rgba(198,40,40,.12)} .lob .ask span:first-child{color:var(--rojo)}
+  .lob .bid i{background:rgba(27,126,52,.12)} .lob .bid span:first-child{color:var(--verde)}
+  .lob .spread{display:flex;justify-content:space-between;padding:6px 15px;margin:3px 0;
+    background:#F4F6FA;border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);
+    font-size:11.6px;color:var(--texto-2)}
+  .lob .cab{display:grid;grid-template-columns:1fr 1fr 1fr;padding:6px 15px;font-size:10.4px;
+    letter-spacing:.6px;text-transform:uppercase;color:var(--texto-3);font-family:Inter,"Segoe UI",sans-serif;font-weight:700}
+  .lob .cab span{text-align:right} .lob .cab span:first-child{text-align:left}
+
+  /* --- grafico --- */
+  .chart-wrap{flex:1;min-height:0;display:flex;background:#131722;border-radius:0 0 var(--radio) var(--radio);overflow:hidden}
+  .tools{width:40px;background:#161B25;border-right:1px solid #232834;display:flex;flex-direction:column;
+    align-items:center;padding:8px 0;gap:4px}
+  .tools b{width:26px;height:26px;border-radius:6px;display:grid;place-items:center;color:#8C96A6;font-size:13px}
+  .tools b.on{background:#2A3243;color:#58A6FF}
+  .chart-in{flex:1;min-width:0}
+  .barra-ind{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#161B25;border-bottom:1px solid #232834}
+  .pill{font-size:11.5px;color:#9AA5B1;border:1px solid #2B3242;border-radius:6px;padding:3px 8px}
+  .pill.on{background:#22304A;border-color:#3B4C6B;color:#58A6FF}
+  .segd{display:inline-flex;background:#1C2230;border-radius:7px;padding:2px;gap:1px}
+  .segd b{font-size:11.5px;font-weight:600;color:#8C96A6;padding:3px 8px;border-radius:5px}
+  .segd b.on{background:#2A3243;color:#E6EDF3}
+
+  /* --- formulario de orden --- */
+  .tabs2{display:grid;grid-template-columns:1fr 1fr}
+  .tabs2 b{text-align:center;padding:9px 0;font-size:13.5px;font-weight:700;color:var(--texto-3);
+    border-bottom:2px solid var(--borde);transition:.18s;cursor:pointer}
+  .tabs2 b.c{color:var(--verde);border-bottom-color:var(--verde);background:rgba(27,126,52,.05)}
+  .tabs2 b.v{color:var(--rojo)}
+  .of{padding:10px 13px;display:flex;flex-direction:column;gap:7px}
+  .lb{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--texto-3);
+    margin-bottom:5px;display:block}
+  .inp{width:100%;height:34px;border:1px solid var(--borde);border-radius:8px;padding:0 10px;
+    font-size:13.4px;font-family:var(--mono);color:var(--texto);background:#fff;outline:none;
+    font-variant-numeric:tabular-nums}
+  .inp:disabled,.inp.off{background:#F2F4F8;color:var(--texto-3)}
+  .pcts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}
+  .pcts b{text-align:center;font-size:11.6px;font-weight:650;border:1px solid var(--borde);
+    border-radius:7px;padding:5px 0;color:var(--texto-2);cursor:pointer}
+  .pcts b.on{border-color:var(--azul);background:rgba(31,56,100,.07);color:var(--azul)}
+  .err{display:flex;gap:6px;align-items:flex-start;background:rgba(198,40,40,.07);
+    border:1px solid rgba(198,40,40,.28);border-radius:8px;padding:7px 9px;font-size:11.9px;color:var(--rojo)}
+  .resumen{border-top:1px solid var(--borde);padding-top:10px;display:flex;flex-direction:column;gap:5px}
+  .resumen div{display:flex;justify-content:space-between;font-size:12.4px;color:var(--texto-2)}
+  .resumen div b{color:var(--texto);font-variant-numeric:tabular-nums}
+  .resumen .tot{font-size:14px} .resumen .tot b{font-size:15px;color:var(--azul)}
+  .hist{flex:1;overflow:hidden}
+  .hist td,.hist th{padding:5px 5px;font-size:11px;white-space:nowrap}
+  .hist th:first-child,.hist td:first-child{padding-left:12px}
+  .hist th:last-child,.hist td:last-child{padding-right:12px}
+  .est2{font-size:9.4px;padding:2px 5px}
+  .est2{font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:2px 6px;border-radius:5px}
+  .est2.e{background:rgba(27,126,52,.11);color:var(--verde)}
+  .est2.p{background:rgba(197,150,26,.18);color:#8A6710}
+  .est2.c{background:#EEF1F7;color:var(--texto-2)}
+  .card-h h2{white-space:nowrap}
+  .tr-grid .card-h h2{font-size:13.6px}
+  .segd b{padding:3px 6px;font-size:11px}
+  .pill{font-size:10.8px;padding:3px 6px}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <a class="logo" href="01_dashboard_claro.html"><span class="mark">EI</span> Ernesto Investing AI</a>
+  <div class="buscador">
+    <svg class="lupa" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="text" placeholder="Buscar ticker, empresa o índice…">
+  </div>
+  <div class="nav-sp"></div>
+  <div class="nav-acc">
+    <a class="tema" href="05_dashboard_oscuro.html"><b class="on">☀</b><b>☾</b></a>
+    <div class="usuario"><span class="avatar">NC</span> Nicolás C.</div>
+  </div>
+</header>
+
+<aside class="sidebar">
+  <div class="side-tit">Navegación</div>
+  <a class="side-it" href="01_dashboard_claro.html"><span class="ic">▦</span> Dashboard</a>
+  <a class="side-it" href="06_leaderboard.html"><span class="ic">◈</span> Mercados</a>
+  <a class="side-it" href="04_movil_portafolio.html"><span class="ic">▤</span> Portafolio</a>
+  <a class="side-it" href="02_watchlist.html"><span class="ic">★</span> Watchlist</a>
+  <a class="side-it act" href="03_trading.html"><span class="ic">⇄</span> Operaciones</a>
+  <a class="side-it" href="03_trading.html"><span class="ic">◷</span> Historial</a>
+  <a class="side-it" href="06_leaderboard.html"><span class="ic">♛</span> Leaderboard</a>
+  <div class="side-sep"></div>
+  <a class="side-it" href="01_dashboard_claro.html"><span class="ic">⚙</span> Configuración</a>
+</aside>
+
+<main class="content">
+
+  <div class="page-head">
+    <div><h1>Operar · BVN</h1><p>Ejecución de órdenes sobre Cía. de Minas Buenaventura S.A.A.</p></div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="chip up">Mercado abierto</span>
+      <a class="btn sec sm" href="01_dashboard_claro.html">← Volver al dashboard</a>
+    </div>
+  </div>
+
+  <div class="tr-grid">
+
+    <!-- ===== COLUMNA IZQUIERDA (30 %) ===== -->
+    <div class="col">
+      <section class="card">
+        <div class="cb">
+          <div class="ident">
+            <div class="lg">BVN</div>
+            <div><h2>Cía. de Minas Buenaventura S.A.A.</h2><div class="tk2">NYSE : BVN · USD</div></div>
+          </div>
+          <div class="precio">14.25 <small>USD</small></div>
+          <div class="varlin pos">+0.33 &nbsp;(+2.35 %) &nbsp;<span style="color:var(--texto-3);font-weight:500">hoy</span></div>
+
+          <div class="rango">
+            <div class="et">Rango de 52 semanas</div>
+            <div class="barra"><i></i><u></u></div>
+            <div class="lim"><span>9.84</span><span>16.92</span></div>
+          </div>
+
+          <div class="datos">
+            <div><span>Volumen</span><b>1,204,880</b></div>
+            <div><span>Vol. medio</span><b>1,846,300</b></div>
+            <div><span>Capitalización</span><b>$ 3.62 B</b></div>
+            <div><span>Beta (5 a.)</span><b>1.42</b></div>
+            <div><span>Apertura</span><b>13.92</b></div>
+            <div><span>Cierre ant.</span><b>13.92</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card fl">
+        <div class="card-h"><h2>Libro de órdenes</h2><span class="sub">Nivel 2 · 4 niveles</span></div>
+        <div class="lob">
+          <div class="cab"><span>Precio</span><span>Cantidad</span><span>Total</span></div>
+          <div class="fila ask"><i style="width:78%"></i><span>14.33</span><span>2,400</span><span>34,392</span></div>
+          <div class="fila ask"><i style="width:61%"></i><span>14.31</span><span>1,880</span><span>26,903</span></div>
+          <div class="fila ask"><i style="width:44%"></i><span>14.29</span><span>1,350</span><span>19,292</span></div>
+          <div class="fila ask"><i style="width:33%"></i><span>14.28</span><span>1,010</span><span>14,423</span></div>
+          <div class="spread"><span>Spread</span><span><b>0.01</b> &nbsp;(0.07 %)</span></div>
+          <div class="fila bid"><i style="width:26%"></i><span>14.25</span><span>&nbsp;&nbsp;790</span><span>11,258</span></div>
+          <div class="fila bid"><i style="width:39%"></i><span>14.23</span><span>1,190</span><span>16,934</span></div>
+          <div class="fila bid"><i style="width:55%"></i><span>14.21</span><span>1,690</span><span>24,015</span></div>
+          <div class="fila bid"><i style="width:70%"></i><span>14.19</span><span>2,150</span><span>30,509</span></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== COLUMNA CENTRAL (45 %) ===== -->
+    <div class="col">
+      <section class="card fl" style="flex:1">
+        <div class="card-h" style="border-bottom:0;padding-bottom:9px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <h2>Gráfico interactivo</h2>
+            <div class="segd"><b>1m</b><b>5m</b><b>15m</b><b>1H</b><b>4H</b><b class="on">1D</b><b>1S</b></div>
+          </div>
+          <div style="display:flex;gap:6px">
+            <span class="pill on">SMA 20</span><span class="pill on">EMA 50</span><span class="pill">RSI</span><span class="pill">MACD ▾</span>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <div class="tools">
+            <b class="on" title="Cursor">✛</b><b title="Línea de tendencia">╱</b><b title="Horizontal">─</b>
+            <b title="Soporte / resistencia">▭</b><b title="Fibonacci">≣</b><b title="Texto">A</b><b title="Medir">⇲</b><b title="Borrar">🗑</b>
+          </div>
+          <div class="chart-in"><img src="assets/velas_trading.svg" alt="Gráfico de velas japonesas de BVN" style="width:100%;height:100%;display:block"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== COLUMNA DERECHA (25 %) ===== -->
+    <div class="col">
+      <section class="card">
+        <div class="tabs2"><b class="c">Compra</b><b class="v">Venta</b></div>
+        <div class="of">
+          <div>
+            <span class="lb">Tipo de orden</span>
+            <select class="sel" style="width:100%;height:34px"><option>Límite</option><option>Mercado</option><option>Stop</option><option>Stop-Límite</option></select>
+          </div>
+          <div>
+            <span class="lb">Precio límite (USD)</span>
+            <input class="inp" value="14.25">
+          </div>
+          <div>
+            <span class="lb">Cantidad (acciones)</span>
+            <input class="inp" value="5,200">
+            <div class="pcts"><b>25 %</b><b>50 %</b><b>75 %</b><b class="on">100 %</b></div>
+          </div>
+          <div class="err">
+            <span>⚠</span>
+            <span>Excede su poder de compra en <b>$ 5,680.00</b>. Reduzca a <b>4,801</b> acciones.</span>
+          </div>
+          <div class="resumen">
+            <div><span>Costo estimado</span><b>$ 74,100.00</b></div>
+            <div><span>Comisión (0.25 %)</span><b>$ 185.25</b></div>
+            <div class="tot"><span>Total a pagar</span><b>$ 74,285.25</b></div>
+          </div>
+          <button class="btn buy blk" style="height:38px;font-size:13.8px">Ejecutar orden de compra</button>
+        </div>
+      </section>
+
+      <section class="card fl" style="flex:1">
+        <div class="card-h" style="padding:10px 14px"><h2>Órdenes recientes · BVN</h2></div>
+        <div class="hist">
+          <table>
+            <thead><tr><th>Fecha</th><th>Tipo</th><th class="mono">Cant.</th><th class="mono">Precio</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>18/09</td><td class="pos">Compra</td><td class="mono">40</td><td class="mono">14.18</td><td><span class="est2 e">Ejecutada</span></td></tr>
+              <tr><td>18/09</td><td class="neg">Venta</td><td class="mono">25</td><td class="mono">14.40</td><td><span class="est2 e">Ejecutada</span></td></tr>
+              <tr><td>17/09</td><td class="pos">Compra</td><td class="mono">60</td><td class="mono">13.96</td><td><span class="est2 p">Pendiente</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>

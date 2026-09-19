@@ -1,0 +1,30 @@
+<role>Eres un diseñador UI/UX experto en interfaces de trading y monitoreo financiero en tiempo
+real.</role>
+<context>Continuación del prototipo "Ernesto Investing AI" — Stock Market Dashboard. Esta
+pantalla es la vista de Watchlist y Alertas, donde el usuario gestiona sus activos favoritos y
+configura alertas de precio.</context>
+<task>Diseña la pantalla de Watchlist y Alertas con:
+1. Encabezado de página: título "Mi Watchlist" con contador de activos (ej: "12 activos"), botón
+"+ Agregar Ticker" con ícono.
+2. Barra de filtros: búsqueda por nombre/ticker, filtro por tipo (Acciones, ETFs, Cripto,
+Índices), ordenar por (Nombre, Precio, Variación %, Volumen).
+3. Grid de tarjetas de activos (3 columnas): cada tarjeta muestra el ticker y nombre, precio
+actual grande, variación del día (absoluta y porcentual con color), mini gráfico sparkline de 7
+días, botón de "Alerta" (campana) y "Operar".
+4. Panel lateral derecho "Alertas Activas": lista de alertas configuradas mostrando ticker,
+condición (precio sube/baja de X), estado (activa/disparada), con toggle on/off y botón eliminar.
+5. Modal de "Nueva Alerta": campos para Ticker (autocompletado), Condición (Mayor que / Menor que
+/ Variación %), Valor umbral, Notificación (Email/Push/Ambas), botón Crear Alerta.</task>
+<style>
+- Mismo tema claro del dashboard: fondo #F0F2F6, tarjetas blancas con border-radius: 12px, sombra
+0 2px 10px rgba(0,0,0,0.09).
+- Colores: verde #1B7E34 para subida, rojo #C62828 para bajada, azul #1F3864 para encabezados,
+dorado #C5961A para badges de alerta disparada.
+- Iconografía: usar Lucide Icons (Bell, TrendingUp, TrendingDown, Plus, Search, Filter).
+- Las tarjetas deben tener efecto hover con elevación sutil (translateY -2px).</style>
+<constraints>
+- Desktop 1440x900px.
+- Textos en español.
+- El modal debe tener overlay semi-transparente oscuro y ser centrado con max-width 480px.
+- Mínimo 6 tarjetas de activos visibles en el grid para demostrar la densidad de
+información.</constraints>

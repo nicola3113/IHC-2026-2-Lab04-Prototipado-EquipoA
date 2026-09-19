@@ -1,0 +1,185 @@
+y
+
+@@@@@
+
+<role>Eres un diseñador UI/UX senior especializado en plataformas financieras y mercados 
+bursátiles.</role> 
+<context>Estamos prototipando un sitio web de mercado bursátil ("Stock Market Dashboard") para un 
+proyecto universitario del curso de Interacción Hombre-Computador de la UNMSM. El público 
+objetivo son traders minoristas e inversores principiantes que necesitan monitorear precios de 
+acciones, índices y criptomonedas en tiempo real.</context> 
+<task>Diseña la pantalla principal del Dashboard de Mercado con los siguientes elementos 
+obligatorios: 
+1. Barra de navegación superior con logo "Ernesto Investing AI", campo de búsqueda de tickers, y 
+menú de usuario con avatar. 
+2. Panel lateral izquierdo con íconos y etiquetas: Dashboard, Mercados, Portafolio, Watchlist, 
+Operaciones, Historial, Configuración. 
+3. Sección de resumen superior con 4 tarjetas KPI: Valor del Portafolio (con variación 
+porcentual), Ganancia/Pérdida del Día, Poder de Compra disponible, y Rango del usuario en el 
+leaderboard. 
+4. Gráfico principal de velas japonesas ("candlestick chart") ocupando el 60% del ancho, con 
+controles de periodo (1D, 1W, 1M, 3M, 1Y) y selector de tipo de gráfico. 
+5. Panel derecho con lista de "Top Movers" mostrando ticker, precio, variación porcentual con 
+color verde/rojo, y mini sparkline. 
+6. Sección inferior con tabla de posiciones del portafolio: Ticker, Nombre, Cantidad, Precio 
+Promedio, Precio Actual, P&L, Acciones (Comprar/Vender).</task> 
+<style> 
+- Tema claro con fondo #F0F2F6, tarjetas blancas con sombra sutil y border-radius: 12px. 
+- Paleta: Azul corporativo #1F3864 para la navbar y encabezados, Dorado #C5961A para acentos y 
+badges, Verde #1B7E34 para ganancias, Rojo #C62828 para pérdidas. 
+- Tipografía: Inter o Segoe UI, pesos 400/600/700. 
+- Inspiración visual: Yahoo Finance, TradingView, Interactive Brokers TWS.</style> 
+<constraints> 
+- Proporciones 1440x900px desktop. 
+- Todos los textos y etiquetas en español. 
+- Incluir estados hover en botones y filas de tabla. 
+- Los números financieros deben usar formato con separador de miles y 2 decimales.</constraints>
+
+@@@@@
+
+<role>Eres un diseñador UI/UX experto en interfaces de trading y monitoreo financiero en tiempo 
+real.</role> 
+<context>Continuación del prototipo "Ernesto Investing AI" — Stock Market Dashboard. Esta 
+pantalla es la vista de Watchlist y Alertas, donde el usuario gestiona sus activos favoritos y 
+configura alertas de precio.</context> 
+<task>Diseña la pantalla de Watchlist y Alertas con: 
+1. Encabezado de página: título "Mi Watchlist" con contador de activos (ej: "12 activos"), botón 
+"+ Agregar Ticker" con ícono. 
+2. Barra de filtros: búsqueda por nombre/ticker, filtro por tipo (Acciones, ETFs, Cripto, 
+Índices), ordenar por (Nombre, Precio, Variación %, Volumen). 
+3. Grid de tarjetas de activos (3 columnas): cada tarjeta muestra el ticker y nombre, precio 
+actual grande, variación del día (absoluta y porcentual con color), mini gráfico sparkline de 7 
+días, botón de "Alerta" (campana) y "Operar". 
+4. Panel lateral derecho "Alertas Activas": lista de alertas configuradas mostrando ticker, 
+condición (precio sube/baja de X), estado (activa/disparada), con toggle on/off y botón eliminar. 
+5. Modal de "Nueva Alerta": campos para Ticker (autocompletado), Condición (Mayor que / Menor que 
+/ Variación %), Valor umbral, Notificación (Email/Push/Ambas), botón Crear Alerta.</task> 
+<style> 
+- Mismo tema claro del dashboard: fondo #F0F2F6, tarjetas blancas con border-radius: 12px, sombra 
+0 2px 10px rgba(0,0,0,0.09). 
+- Colores: verde #1B7E34 para subida, rojo #C62828 para bajada, azul #1F3864 para encabezados, 
+dorado #C5961A para badges de alerta disparada. 
+- Iconografía: usar Lucide Icons (Bell, TrendingUp, TrendingDown, Plus, Search, Filter). 
+- Las tarjetas deben tener efecto hover con elevación sutil (translateY -2px).</style> 
+<constraints> 
+- Desktop 1440x900px. 
+- Textos en español. 
+- El modal debe tener overlay semi-transparente oscuro y ser centrado con max-width 480px. 
+- Mínimo 6 tarjetas de activos visibles en el grid para demostrar la densidad de 
+información.</constraints>
+
+@@@@@
+
+<role>Eres un diseñador UI/UX especializado en plataformas de ejecución de órdenes bursátiles y 
+experiencia de trading.</role> 
+<context>Pantalla de ejecución de operaciones ("Trade") del prototipo "Ernesto Investing AI". El 
+usuario ya seleccionó un activo desde el Dashboard o la Watchlist y ahora quiere ejecutar una 
+orden de compra o venta.</context> 
+<task>Diseña la pantalla de Trading/Orden con layout de 3 columnas: 
+COLUMNA IZQUIERDA (30%): 
+1. Panel de información del activo: logo/ícono, nombre completo y ticker, precio actual grande, 
+variación del día, rango 52 semanas (barra de progreso), volumen del día, capitalización de 
+mercado. 
+2. Libro de órdenes simplificado: 5 niveles de compra (bid) en verde y 5 de venta (ask) en rojo, 
+con precio y volumen. 
+  
+COLUMNA CENTRAL (45%): 
+3. Gráfico de velas japonesas interactivo con herramientas de dibujo: líneas de tendencia, 
+soporte/resistencia, indicadores técnicos (SMA, EMA, RSI, MACD como selector desplegable). 
+4. Selector de periodo: 1min, 5min, 15min, 1H, 4H, 1D, 1W. 
+  
+COLUMNA DERECHA (25%): 
+5. Formulario de orden: tabs Compra/Venta (verde/rojo), tipo de orden (Mercado, Límite, Stop, 
+Stop-Limit), campos Precio Límite (deshabilitado en orden de mercado), Cantidad (con botones 
+25%/50%/75%/100% del poder de compra), costo estimado total, botón grande "Ejecutar Orden". 
+6. Historial de órdenes recientes del activo: tabla compacta con Fecha, Tipo, Cantidad, Precio, 
+Estado (Ejecutada/Pendiente/Cancelada).</task> 
+<style> 
+- Fondo del gráfico: #131722 (estilo TradingView dark para el área del chart únicamente). 
+- Resto de la interfaz en tema claro: #F0F2F6 fondo, tarjetas blancas. 
+- Botón Compra: gradiente verde #1B7E34 a #2E7D32. Botón Venta: gradiente rojo #C62828 a #B71C1C. 
+- Tipografía monoespaciada (Consolas) para precios y cantidades numéricas. 
+- Transiciones suaves en los tabs Compra/Venta.</style> 
+<constraints> 
+- Desktop 1440x900px. 
+- Textos en español. 
+- El formulario de orden debe mostrar validación en tiempo real: si la cantidad excede el poder 
+de compra, mostrar mensaje en rojo. 
+- Los niveles del libro de órdenes deben tener barras de fondo proporcionales al 
+volumen.</constraints>
+
+@@@@@
+
+<role>Eres un diseñador UI/UX mobile-first especializado en apps de inversión y fintech.</role> 
+<context>Versión móvil del prototipo "Ernesto Investing AI". Necesitamos la vista mobile del 
+portafolio para la presentación del proyecto IHC de la UNMSM.</context> 
+<task>Diseña 3 pantallas móviles (390x844px, iPhone 14) conectadas por flujo de navegación: 
+  
+PANTALLA 1 — Mi Portafolio: 
+- Header con saludo "Hola, Trader" y avatar. 
+- Tarjeta principal: Valor Total del Portafolio en grande, variación del día (absoluta y %), mini 
+gráfico de área de 30 días. 
+- Selector de periodo: 1D, 1S, 1M, 3M, 1A. 
+- Lista de posiciones: cada fila muestra ícono del activo, ticker, nombre, cantidad de acciones, 
+valor en USD, variación % con color. 
+- Barra de navegación inferior: Inicio, Mercados, Operar (botón central prominente), Liga, Más. 
+  
+PANTALLA 2 — Detalle del Activo (al tocar una posición): 
+- Gráfico de velas a pantalla completa con gesture de zoom/pan. 
+- Tabs: Resumen | Técnico | Noticias | Fundamentales. 
+- Tab Resumen: precio actual, variación, apertura, cierre anterior, máximo/mínimo del día, 
+volumen. 
+- Botones flotantes inferiores: "Comprar" (verde) y "Vender" (rojo). 
+  
+PANTALLA 3 — Orden Rápida (bottom sheet): 
+- Bottom sheet que sube desde abajo con handle de arrastre. 
+- Tabs Comprar/Vender. 
+- Campos: tipo de orden, cantidad (con slider), precio estimado. 
+- Botón de confirmación a ancho completo.</task> 
+<style> 
+- Tema claro: fondo #F8F9FB, tarjetas blancas con border-radius: 16px y sombra sutil. 
+- Paleta consistente con la versión desktop: Azul #1F3864, Dorado #C5961A, Verde #1B7E34, Rojo 
+#C62828. 
+- Esquinas muy redondeadas (16px) y espaciado generoso para touch targets de 48px mínimo. 
+- Inspiración: Robinhood, Revolut Invest, la app Fantasy Trading League.</style> 
+<constraints> 
+- 390x844px (iPhone 14). 
+- Textos en español. 
+- Bottom sheet con efecto blur de fondo (backdrop-filter: blur). 
+- Las 3 pantallas deben mostrarse lado a lado en el frame de Figma con flechas de flujo entre 
+ellas.</constraints>
+
+@@@@@
+
+<role>Eres un diseñador UI/UX experto en diseño de modo oscuro para aplicaciones financieras de 
+alta densidad de datos.</role> 
+<context>Variante en modo oscuro ("Dark Mode") del Dashboard principal de "Ernesto Investing AI" 
+para traders que operan en sesiones nocturnas o ambientes con poca luz.</context> 
+<task>Rediseña el Dashboard principal en modo oscuro completo: 
+1. Barra de navegación: fondo #0D1117, logo en dorado #C5961A, texto en #E6EDF3. 
+2. Fondo general: #0D1117 (negro profundo), tarjetas en #161B22 con borde sutil #30363D. 
+3. Las 4 tarjetas KPI con el mismo contenido pero colores adaptados: texto principal en #E6EDF3, 
+texto secundario en #8B949E. 
+4. Gráfico de velas con fondo #0D1117, grid lines en #21262D, velas verdes #238636 y rojas 
+#DA3633. 
+5. Tabla de posiciones con filas alternadas #0D1117 / #161B22, hover en #1F2937. 
+6. Panel lateral: íconos en #8B949E, ítem activo con fondo #1F6FEB20 y texto #58A6FF. 
+7. Selector de tema: toggle sol/luna en la navbar para cambiar entre claro y oscuro.</task> 
+<style> 
+- Paleta dark mode inspirada en GitHub Dark y TradingView Dark. 
+- Contraste suficiente para lectura prolongada: texto principal #E6EDF3, secundario #8B949E, 
+deshabilitado #484F58. 
+- Acentos: Azul #58A6FF para links y selección, Dorado #C5961A para badges premium, Verde 
+#238636, Rojo #DA3633. 
+- Bordes sutiles de 1px en #30363D para separar secciones. 
+- Sombras oscuras: 0 4px 12px rgba(0,0,0,0.4).</style> 
+<constraints> 
+- Desktop 1440x900px. 
+- Textos en español. 
+- El toggle de tema debe ser visualmente prominente y accesible. 
+- Verificar que ningún texto quede con contraste insuficiente contra el fondo 
+oscuro.</constraints>
+
+@@@@@
+
+y

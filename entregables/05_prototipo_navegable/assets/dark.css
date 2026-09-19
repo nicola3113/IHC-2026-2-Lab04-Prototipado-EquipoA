@@ -1,0 +1,64 @@
+/* ============================================================
+   Variante en modo oscuro - inspirada en GitHub Dark y TradingView Dark
+   Contrastes verificados: texto principal #E6EDF3 sobre #0D1117 = 14.8:1
+   ============================================================ */
+:root{
+  --fondo:#0D1117; --tarjeta:#161B22; --borde:#30363D;
+  --texto:#E6EDF3; --texto-2:#B6C0CB; --texto-3:#8B949E;
+  --azul:#0D1117; --azul-2:#1F6FEB; --dorado:#C5961A;
+  --verde:#238636; --rojo:#DA3633;
+  --sombra:0 4px 12px rgba(0,0,0,.4);
+}
+body{background:var(--fondo);color:var(--texto)}
+
+.navbar{background:#0D1117;border-bottom:1px solid var(--borde)}
+.logo{color:#E6EDF3}
+.logo .mark{background:var(--dorado);color:#0D1117}
+.buscador input{background:#161B22;border-color:#30363D;color:#E6EDF3}
+.buscador input::placeholder{color:#6E7681}
+.tema{background:#161B22;border-color:#30363D}
+.tema b.on{background:var(--dorado);color:#0D1117}
+
+.sidebar{background:#0D1117;border-right:1px solid var(--borde)}
+.side-it{color:#8B949E}
+.side-it:hover{background:#161B22;color:#E6EDF3}
+.side-it.act{background:rgba(31,111,235,.13);color:#58A6FF}
+.side-sep{background:var(--borde)}
+
+.card,.kpi{background:var(--tarjeta);border-color:var(--borde)}
+.card-h{border-bottom-color:var(--borde)}
+.card-h h2{color:#E6EDF3}
+.page-head h1{color:#E6EDF3}
+.kpi:before{background:#1F6FEB}
+.kpi.g:before{background:var(--verde)} .kpi.d:before{background:var(--dorado)}
+.kpi .vl{color:#E6EDF3}
+.chip.up{background:rgba(35,134,54,.18);color:#3FB950}
+.chip.dn{background:rgba(218,54,51,.16);color:#F85149}
+.chip.or{background:rgba(197,150,26,.20);color:#E3B341}
+.chip.bl{background:rgba(31,111,235,.16);color:#58A6FF}
+.pos{color:#3FB950} .neg{color:#F85149}
+
+.seg{background:#0D1117;border:1px solid var(--borde)}
+.seg b{color:#8B949E}
+.seg b.on{background:#21262D;color:#58A6FF;box-shadow:none}
+.sel{background:#161B22;border-color:var(--borde);color:#B6C0CB;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238B949E' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 9px center}
+.btn.pri{background:#1F6FEB;color:#fff}
+.btn.pri:hover{background:#388BFD}
+.btn.sec{background:#161B22;border-color:var(--borde);color:#B6C0CB}
+.btn.sec:hover{border-color:#58A6FF;color:#58A6FF}
+.btn.buy{background:linear-gradient(180deg,#238636,#1F7A31)}
+.btn.sell{background:linear-gradient(180deg,#DA3633,#C22F2C)}
+
+thead th{background:#0D1117;border-bottom-color:var(--borde);color:#8B949E}
+tbody td{border-bottom-color:#21262D;color:#C9D1D9}
+tbody tr:nth-child(odd){background:#0D1117}
+tbody tr:nth-child(even){background:#161B22}
+tbody tr:hover{background:#1F2937}
+.tk{color:#58A6FF}
+.nm{color:#8B949E}
+
+.mover{border-bottom-color:#21262D}
+.mover:hover{background:#1F2937}
+.mover .id b{color:#58A6FF}
+.mover .id span{color:#8B949E}

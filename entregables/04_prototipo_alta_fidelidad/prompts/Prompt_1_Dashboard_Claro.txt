@@ -1,0 +1,34 @@
+<prompt_figma_make>
+<role>Eres un diseñador UI/UX senior especializado en plataformas financieras y mercados
+bursátiles.</role>
+<context>Estamos prototipando un sitio web de mercado bursátil ("Stock Market Dashboard") para un
+proyecto universitario del curso de Interacción Hombre-Computador de la UNMSM. El público
+objetivo son traders minoristas e inversores principiantes que necesitan monitorear precios de
+acciones, índices y criptomonedas en tiempo real.</context>
+<task>Diseña la pantalla principal del Dashboard de Mercado con los siguientes elementos
+obligatorios:
+1. Barra de navegación superior con logo "Ernesto Investing AI", campo de búsqueda de tickers, y
+menú de usuario con avatar.
+2. Panel lateral izquierdo con íconos y etiquetas: Dashboard, Mercados, Portafolio, Watchlist,
+Operaciones, Historial, Configuración.
+3. Sección de resumen superior con 4 tarjetas KPI: Valor del Portafolio (con variación
+porcentual), Ganancia/Pérdida del Día, Poder de Compra disponible, y Rango del usuario en el
+leaderboard.
+4. Gráfico principal de velas japonesas ("candlestick chart") ocupando el 60% del ancho, con
+controles de periodo (1D, 1W, 1M, 3M, 1Y) y selector de tipo de gráfico.
+5. Panel derecho con lista de "Top Movers" mostrando ticker, precio, variación porcentual con
+color verde/rojo, y mini sparkline.
+6. Sección inferior con tabla de posiciones del portafolio: Ticker, Nombre, Cantidad, Precio
+Promedio, Precio Actual, P&L, Acciones (Comprar/Vender).</task>
+<style>
+- Tema claro con fondo #F0F2F6, tarjetas blancas con sombra sutil y border-radius: 12px.
+- Paleta: Azul corporativo #1F3864 para la navbar y encabezados, Dorado #C5961A para acentos y
+badges, Verde #1B7E34 para ganancias, Rojo #C62828 para pérdidas.
+- Tipografía: Inter o Segoe UI, pesos 400/600/700.
+- Inspiración visual: Yahoo Finance, TradingView, Interactive Brokers TWS.</style>
+<constraints>
+- Proporciones 1440x900px desktop.
+- Todos los textos y etiquetas en español.
+- Incluir estados hover en botones y filas de tabla.
+- Los números financieros deben usar formato con separador de miles y 2 decimales.</constraints>
+</prompt_figma_make>

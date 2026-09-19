@@ -1,0 +1,803 @@
+=== p1 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 1 de 24 
+ 
+UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS 
+Universidad del Perú, DECANA DE AMÉRICA 
+Facultad de Ingeniería de Sistemas e Informática 
+Escuela Profesional de Ingeniería de Software 
+ 
+IHC: Interacción Hombre-Computador 
+Guía de Laboratorio Semana 04 
+Prototipado de Interfaces para un Dashboard Bursátil 
+con Figma Make AI 
+ 
+Semestre: 2026-2 
+Sesión: 4 — Unidad I 
+Docente: Prof. Mg. Ing. Ernesto D. Cancho-Rodríguez, MBA (GWU) 
+Código: 202W0606 
+Fecha: Septiembre 2026 
+  
+=== p2 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 2 de 24 
+Contenido 
+Guía de Laboratorio 4 · Prototipado de Interfaces para un Dashboard Bursátil con Figma Make AI ........... 3 
+L.1 Objetivo de la Práctica Grupal Calificada ................................ ................................ ...........................  3 
+L.2 Requisitos Previos y Entorno de Trabajo................................ ................................ ............................  3 
+L.2.1 Conocimientos previos ................................ ................................ ................................ ................  3 
+L.2.2 Herramientas y entorno ................................ ................................ ................................ ..............  3 
+L.3 Fundamento Teórico Breve ................................ ................................ ................................ ................  3 
+L.3.1 Definición de prototipo ................................ ................................ ................................ ...............  3 
+L.3.2 Tipos de prototipos ................................ ................................ ................................ .....................  4 
+L.3.3 Ventajas del prototipado ................................ ................................ ................................ ............ 4 
+L.3.4 Desventajas del prototipado ................................ ................................ ................................ ....... 5 
+L.3.5 Utilidad del prototipado en el DCU ................................ ................................ .............................  5 
+L.3.6 Figma Make AI como herramienta de prototipado ................................ ................................ ..... 5 
+L.4 Desarrollo Guiado Paso a Paso ................................ ................................ ................................ .......... 6 
+Paso 1 — Análisis de Interfaces de Referencia ................................ ................................ ....................  6 
+Paso 2 — Prototipo de Baja Fidelidad: Boceto en Papel ................................ ................................ ...... 7 
+Paso 3 — Prototipo de Media Fidelidad: Wireframe con PlantUML Salt ................................ .............  8 
+Paso 4 — Prototipo de Alta Fidelidad: Figma Make AI con Prompts Hiperdetallados ......................... 10 
+Paso 5 — Conectar las Pantallas en un Prototipo Navegable................................ .............................. 19 
+Paso 6 — Análisis Comparativo: Wireframe vs. Prototipo de Alta Fidelidad ................................ ......20 
+L.5 Ejercicio Propuesto para el Equipo................................ ................................ ................................ ....21 
+L.6 Entregables y Formato de Entrega en el Aula Virtual Classroom ................................ ...................... 22 
+L.7 Rúbrica de Evaluación ................................ ................................ ................................ ....................... 23 
+L.8 Referencias Web ................................ ................................ ................................ ............................... 24 
+ 
+  
+=== p3 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 3 de 24 
+Guía de Laboratorio 4 · Prototipado de Interfaces para un 
+Dashboard Bursátil con Figma Make AI 
+L.1 Objetivo de la Práctica Grupal Calificada 
+Al finalizar esta práctica, el estudiante será capaz de diseñar prototipos de interfaces de usuario de 
+diferentes niveles de fidelidad para un sitio web de mercado bursátil, aplicando los principios del diseño 
+centrado en el usuario (DCU — User-Centered Design) y utilizando Figma Make AI como herramienta de 
+prototipado asistido por inteligencia artificial.  
+Esta práctica contribuye al Resultado de Aprendizaje RA1 (CT8.2): Explica los fundamentos de la interacción 
+hombre-computador y las modalidades de interfaz, considerando principios de diseño y características del 
+usuario para la construcción de interfaces. 
+L.2 Requisitos Previos y Entorno de Trabajo 
+L.2.1 Conocimientos previos 
+• Fundamentos de IHC: concepto de interfaz, relación usuario-tarea-contexto (Sesión 1). 
+• Diseño centrado en el usuario: tipos de usuarios, necesidades de interacción (Sesión 2). 
+• Análisis de tareas: descomposición jerárquica HTA (Sesión 3). 
+• Navegación web: experiencia usando plataformas como Yahoo Finance, TradingView o 
+Investing.com. 
+L.2.2 Herramientas y entorno 
+Herramienta Propósito Acceso 
+Figma (plan gratuito) Diseño de interfaces y prototipos https://www.figma.com/  
+Figma Make AI (Labs) Generación de UI mediante 
+prompts 
+Dentro de Figma → Labs → Make 
+Navegador web Referencia visual de plataformas Chrome / Firefox / Edge 
+L.3 Fundamento Teórico Breve 
+L.3.1 Definición de prototipo 
+Un prototipo es una representación limitada de un producto o sistema interactivo que permite a los 
+usuarios y diseñadores interactuar con él y explorar su conveniencia antes de la implementación final. 
+Según Shneiderman y Plaisant (2018), el prototipado es una actividad central del diseño centrado en el 
+usuario porque permite evaluar ideas con usuarios reales en etapas tempranas, reduciendo el costo de los 
+cambios y mejorando la calidad de la interfaz final. 
+=== p4 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 4 de 24 
+L.3.2 Tipos de prototipos 
+Tipo Fidelidad Materiales / 
+Herramientas 
+Ventajas Desventajas Cuándo usar 
+Boceto en 
+papel 
+Baja Papel, lápiz, post-
+its, plantillas 
+impresas 
+Rápido, económico, 
+promueve la 
+creatividad sin 
+restricciones 
+tecnológicas 
+No interactivo, 
+difícil de testear 
+con usuarios 
+remotos 
+Fase de ideación 
+inicial, lluvia de 
+ideas, exploración 
+de flujos 
+Wireframe 
+digital 
+Baja-
+Media 
+Figma, Balsamiq, 
+PlantUML Salt, 
+Excalidraw 
+Editable, 
+compartible, 
+versiona la 
+estructura sin 
+comprometer estilo 
+Sin interacción real, 
+puede dar falsa 
+impresión de 
+producto 
+terminado 
+Definición del 
+layout, jerarquía 
+visual, arquitectura 
+de información 
+Mockup 
+estático 
+Media-
+Alta 
+Figma, Adobe XD, 
+Sketch, Figma 
+Make AI 
+Visualiza el diseño 
+final: colores, 
+tipografía, 
+iconografía, 
+espaciado 
+No permite validar 
+flujos de 
+interacción ni 
+tiempos de tarea 
+Aprobación visual 
+del cliente, guía de 
+estilo, presentación 
+del diseño 
+Prototipo 
+interactivo 
+Alta Figma Prototype, 
+HTML/CSS/JS, 
+Framer, Axure 
+Simula la 
+interacción real: 
+navegación, 
+transiciones, 
+formularios 
+Mayor tiempo y 
+costo de desarrollo, 
+puede generar 
+expectativas falsas 
+Pruebas de 
+usabilidad con 
+participantes, 
+validación de flujos 
+críticos 
+Prototipo 
+funcional 
+Muy Alta HTML + JavaScript 
++ API real, Next.js, 
+React 
+Código funcional 
+con datos reales, 
+base para el 
+producto final 
+Alto costo, requiere 
+desarrollo 
+completo, poco 
+flexible ante 
+cambios 
+Fase final antes del 
+lanzamiento, 
+pruebas con datos 
+de producción 
+L.3.3 Ventajas del prototipado 
+• Reducción de costos: detectar errores de diseño antes de escribir código ahorra entre el 50% y el 
+80% del costo de corrección en etapas posteriores (Boehm, 1981). 
+• Comunicación con stakeholders: un prototipo visual comunica la visión del producto mejor que 
+cualquier documento de especificación. 
+• Validación temprana: permite ejecutar pruebas de usabilidad y obtener retroalimentación antes de 
+invertir en desarrollo. 
+• Iteración rápida: los prototipos de baja fidelidad se pueden descartar y reconstruir en minutos. 
+• Alineación del equipo: todos los miembros del equipo comparten la misma visión de la interfaz. 
+=== p5 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 5 de 24 
+L.3.4 Desventajas del prototipado 
+• Expectativas falsas: un prototipo de alta fidelidad puede hacer creer al cliente que el producto ya 
+está terminado. 
+• Costo del prototipo: un prototipo funcional consume recursos de desarrollo que podrían invertirse 
+en el producto real. 
+• Fijación en el diseño: el equipo puede apegarse emocionalmente a un prototipo y resistirse a los 
+cambios que surjan de la evaluación. 
+• Falta de representatividad: un prototipo de baja fidelidad puede no capturar los problemas de 
+interacción que solo se manifiestan con datos reales. 
+L.3.5 Utilidad del prototipado en el DCU 
+En el ciclo de diseño centrado en el usuario (ISO 9241-210), el prototipado aparece en la fase de "producir 
+soluciones de diseño" y se conecta directamente con la fase de "evaluar los diseños".  
+El prototipo es el artefacto concreto que se somete a la evaluación, ya sea mediante evaluación heurística, 
+recorrido cognitivo o pruebas de usabilidad con participantes. Sin un prototipo, la evaluación es 
+imposible.  
+El prototipado asistido por IA (con herramientas como Figma Make AI) acelera este ciclo al generar 
+mockups a partir de descripciones textuales, permitiendo al equipo iterar más rápido entre las fases de 
+diseño y evaluación. 
+L.3.6 Figma Make AI como herramienta de prototipado 
+Figma Make AI es una funcionalidad integrada en Figma (disponible en Figma Labs, gratuita) que permite 
+generar componentes, pantallas y prototipos a partir de prompts de texto en lenguaje natural.  
+El usuario describe lo que quiere ver y Figma Make genera la interfaz directamente en el canvas de Figma, 
+donde el diseñador puede editar, refinar y conectar los elementos para crear un prototipo navegable.  
+La calidad de la salida depende críticamente de la calidad del prompt: los prompts hiperdetallados con 
+etiquetas de apertura y cierre producen resultados significativamente mejores que las descripciones vagas. 
+  
+=== p6 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 6 de 24 
+L.4 Desarrollo Guiado Paso a Paso 
+Paso 1 — Análisis de Interfaces de Referencia 
+Enunciado: Prototipar la Interfaz de Sistema Web de Gestión de Portafolio de Inversiones   
+Antes de prototipar, es fundamental estudiar las interfaces existentes de plataformas bursátiles 
+profesionales para identificar patrones de diseño, convenciones del dominio y expectativas del usuario.  
+El equipo debe analizar al menos 4 plataformas de referencia y documentar sus hallazgos en una tabla 
+comparativa. 
+Actividad Grupal 01: Navegue las siguientes plataformas y complete la tabla de hallazgos: 
+Plataforma URL Elementos para observar 
+Yahoo Finance https://finance.yahoo.com/  Layout del dashboard, gráficos de precios, 
+listas de watchlist, noticias integradas 
+TradingView https://www.tradingview.com/  Gráficos de velas, herramientas de dibujo, 
+panel lateral, modo oscuro 
+Investing.com https://www.investing.com/  Tabla de activos, filtros, alertas, diseño 
+responsive 
+IBKR TWS Web https://www.interactivebrokers.com/  Panel de trading, libro de órdenes, 
+formulario de orden, densidad de datos 
+Resultado esperado: Una tabla comparativa en un documento MICROSOFT WORD compartido por el 
+equipo, con capturas de pantalla y anotaciones numeradas de los patrones de diseño identificados. 
+  
+=== p7 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 7 de 24 
+Paso 2 — Prototipo de Baja Fidelidad: Boceto en Papel 
+Enunciado:  
+Cada miembro del equipo debe dibujar a mano, en papel, su propuesta de layout para el Dashboard 
+principal del sitio web de mercado bursátil.  
+El boceto debe incluir las siguientes zonas funcionales:  
+(a) barra de navegación superior,  
+(b) panel lateral de menú,  
+(c) tarjetas KPI de resumen,  
+(d) gráfico principal de precios,  
+(e) tabla de posiciones del portafolio, y  
+(f) lista de activos destacados ("Top Movers"). 
+Resultado esperado:  
+Cada estudiante presenta su boceto en papel, ESCANEADO e insertado en el documento de entrega.  
+El equipo selecciona el mejor layout por votación y lo utiliza como base para el siguiente paso. 
+  
+=== p8 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 8 de 24 
+Paso 3 — Prototipo de Media Fidelidad: Wireframe con PlantUML Salt 
+Enunciado: Traslade el boceto ganador a un wireframe digital usando PlantUML Salt. Este wireframe debe 
+representar la estructura y jerarquía de información del Dashboard, sin comprometer diseño visual final. 
+Prompt AIAP: Actúa como diseñador de interfaces. Genera un wireframe en PlantUML Salt para el 
+Dashboard principal de un sitio web de mercado bursátil con: barra de navegación con logo y búsqueda, 
+panel lateral con menú (Dashboard, Mercados, Portafolio, Watchlist), 4 tarjetas KPI (Valor del Portafolio, 
+Ganancia del Día, Poder de Compra, Rango), área de gráfico principal con selector de periodo, y tabla de 
+posiciones con columnas Ticker, Precio, Variación, P&L. Comenta cada sección en español.  
+@startsalt wireframe 
+{+ 
+  {/ <b>Ernesto Investing AI</b> | [____Buscar ticker____] | (o) Usuario }  
+  { 
+    { 
+      [Dashboard]  | 
+      [Mercados]   | 
+      [Portafolio]  | 
+      [Watchlist]   | 
+      [Operaciones] | 
+      [Historial] 
+    } | 
+    {+ 
+      { 
+        { <b>Valor Portafolio</b>  
+          \$125,430.50 
+          <color:green>+8.45%</color>  
+        } | 
+        { <b>Ganancia del Día</b>  
+          \$2,450.00 
+          <color:green>+1.26%</color>  
+        } | 
+        { <b>Poder de Compra</b> 
+          \$68,420.00 
+        } | 
+        { <b>Rango</b> 
+          #128 
+        } 
+      } 
+      --- 
+      { <b>Gráfico Principal — BVN Buenaventura</b>  
+        . 
+        . [1D] [1W] [1M] [3M] [1Y]  
+        . 
+        .   /\      /\ 
+        .  /  \    /  \  /\ 
+        . /    \  /    \/  \ 
+        ./      \/          \ 
+        . 
+      } 
+      --- 
+      {+ 
+        {# <b>Ticker</b> | <b>Nombre</b>        | <b>Precio</b>  | <b>Var %</b>    | <b>P&L</b>      | 
+<b>Acción</b> 
+           BVN         | Buenaventura       | \$14.25      | <color:green>+2.35%</color> | 
+<color:green>+\$340</color>  | [Operar]  
+           FSM         | Fortuna Silver     | \$5.80       | <color:red>-1.20%</color>   | <color:red>-
+\$58</color>    | [Operar] 
+           ABX.TO      | Barrick Gold       | \$22.10      | <color:green>+0.90%</color> | 
+<color:green>+\$125</color> | [Operar]  
+           AAPL        | Apple Inc.         | \$198.50     | <color:green>+1.05%</color> | 
+<color:green>+\$892</color> | [Operar]  
+           TSLA        | Tesla Inc.         | \$245.30     | <color:red>-2.10%</color>   | <color:red>-
+\$412</color>  | [Operar] 
+        } 
+      } 
+    } 
+  } 
+} 
+@endsalt 
+=== p9 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 9 de 24 
+Verificación del código generado: El código PlantUML se ejecutó VSC o en el servidor PlantUML en línea 
+(https://www.plantuml.com/plantuml/uml ) y generó la imagen del wireframe sin errores de sintaxis. 
+  
+=== p10 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 10 de 24 
+Paso 4 — Prototipo de Alta Fidelidad: Figma Make AI con Prompts Hiperdetallados  
+Enunciado: Este es el paso central de la práctica.  
+El equipo utilizará Figma Make AI para generar 5 pantallas del prototipo de alta fidelidad del sitio web de 
+mercado bursátil.  
+Para cada pantalla, se proporciona un prompt hiperdetallado con etiquetas de apertura y cierre que 
+estructura la solicitud en Rol, Contexto, Tarea, Estilo y Restricciones.  
+Copie cada prompt en Figma Make y refine el resultado generado. 
+Instrucciones de uso de los prompts:  
+(a) Abra Figma y cree un nuevo archivo de diseño.  
+(b) Active Figma Make desde Labs.  
+(c) Copie el contenido del prompt (sin las etiquetas XML externas <prompt_figma_make> y 
+</prompt_figma_make>) en el campo de entrada de Make.  
+(d) Genere la pantalla.  
+(e) Edite y refine el resultado: ajuste colores, tipografía, espaciado y contenido según las convenciones del 
+dominio bursátil. 
+Pantalla 1 — Dashboard Principal (Tema Claro) 
+Prompt AIAP: Prompt hiperdetallado para Figma Make AI — ver bloque completo a continuación. [Figma 
+Make AI, 2026-09-18] 
+<prompt_figma_make> 
+<role>Eres un diseñador UI/UX senior especializado en plataformas financieras y mercados 
+bursátiles.</role> 
+<context>Estamos prototipando un sitio web de mercado bursátil ("Stock Market Dashboard") para un 
+proyecto universitario del curso de Interacción Hombre-Computador de la UNMSM. El público 
+objetivo son traders minoristas e inversores principiantes que necesitan monitorear precios de 
+acciones, índices y criptomonedas en tiempo real.</context> 
+<task>Diseña la pantalla principal del Dashboard de Mercado con los siguientes elementos 
+obligatorios: 
+1. Barra de navegación superior con logo "Ernesto Investing AI", campo de búsqueda de tickers, y 
+menú de usuario con avatar. 
+2. Panel lateral izquierdo con íconos y etiquetas: Dashboard, Mercados, Portafolio, Watchlist, 
+Operaciones, Historial, Configuración. 
+3. Sección de resumen superior con 4 tarjetas KPI: Valor del Portafolio (con variación 
+porcentual), Ganancia/Pérdida del Día, Poder de Compra disponible, y Rango del usuario en el 
+leaderboard. 
+4. Gráfico principal de velas japonesas ("candlestick chart") ocupando el 60% del ancho, con 
+controles de periodo (1D, 1W, 1M, 3M, 1Y) y selector de tipo de gráfico. 
+5. Panel derecho con lista de "Top Movers" mostrando ticker, precio, variación porcentual con 
+color verde/rojo, y mini sparkline. 
+6. Sección inferior con tabla de posiciones del portafolio: Ticker, Nombre, Cantidad, Precio 
+Promedio, Precio Actual, P&L, Acciones (Comprar/Vender).</task> 
+<style> 
+- Tema claro con fondo #F0F2F6, tarjetas blancas con sombra sutil y border-radius: 12px. 
+- Paleta: Azul corporativo #1F3864 para la navbar y encabezados, Dorado #C5961A para acentos y 
+badges, Verde #1B7E34 para ganancias, Rojo #C62828 para pérdidas. 
+- Tipografía: Inter o Segoe UI, pesos 400/600/700. 
+- Inspiración visual: Yahoo Finance, TradingView, Interactive Brokers TWS.</style> 
+=== p11 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 11 de 24 
+<constraints> 
+- Proporciones 1440x900px desktop. 
+- Todos los textos y etiquetas en español. 
+- Incluir estados hover en botones y filas de tabla. 
+- Los números financieros deben usar formato con separador de miles y 2 decimales.</constraints> 
+</prompt_figma_make> 
+ 
+Resultado esperado:  
+Un frame de 1440×900px en Figma con el Dashboard completo: navbar, panel lateral, 4 tarjetas KPI, 
+gráfico principal de velas y tabla de posiciones.  
+Interfaz de referencia: la imagen de Stock Market Simulation Game adjunta al enunciado, que muestra un 
+layout similar con tarjetas superiores, gráfico central y lista de posiciones. 
+ 
+  
+
+=== p12 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 12 de 24 
+Pantalla 2 — Watchlist y Alertas 
+Prompt AIAP: Prompt hiperdetallado para Figma Make AI — ver bloque completo a continuación. [Figma 
+Make AI, 2026-09-18] 
+<prompt_figma_make> 
+<role>Eres un diseñador UI/UX experto en interfaces de trading y monitoreo financiero en tiempo 
+real.</role> 
+<context>Continuación del prototipo "Ernesto Investing AI" — Stock Market Dashboard. Esta 
+pantalla es la vista de Watchlist y Alertas, donde el usuario gestiona sus activos favoritos y 
+configura alertas de precio.</context> 
+<task>Diseña la pantalla de Watchlist y Alertas con: 
+1. Encabezado de página: título "Mi Watchlist" con contador de activos (ej: "12 activos"), botón 
+"+ Agregar Ticker" con ícono. 
+2. Barra de filtros: búsqueda por nombre/ticker, filtro por tipo (Acciones, ETFs, Cripto, 
+Índices), ordenar por (Nombre, Precio, Variación %, Volumen). 
+3. Grid de tarjetas de activos (3 columnas): cada tarjeta muestra el ticker y nombre, precio 
+actual grande, variación del día (absoluta y porcentual con color), mini gráfico sparkline de 7 
+días, botón de "Alerta" (campana) y "Operar". 
+4. Panel lateral derecho "Alertas Activas": lista de alertas configuradas mostrando ticker, 
+condición (precio sube/baja de X), estado (activa/disparada), con toggle on/off y botón eliminar. 
+5. Modal de "Nueva Alerta": campos para Ticker (autocompletado), Condición (Mayor que / Menor que 
+/ Variación %), Valor umbral, Notificación (Email/Push/Ambas), botón Crear Alerta.</task> 
+<style> 
+- Mismo tema claro del dashboard: fondo #F0F2F6, tarjetas blancas con border-radius: 12px, sombra 
+0 2px 10px rgba(0,0,0,0.09). 
+- Colores: verde #1B7E34 para subida, rojo #C62828 para bajada, azul #1F3864 para encabezados, 
+dorado #C5961A para badges de alerta disparada. 
+- Iconografía: usar Lucide Icons (Bell, TrendingUp, TrendingDown, Plus, Search, Filter). 
+- Las tarjetas deben tener efecto hover con elevación sutil (translateY -2px).</style> 
+<constraints> 
+- Desktop 1440x900px. 
+- Textos en español. 
+- El modal debe tener overlay semi-transparente oscuro y ser centrado con max-width 480px. 
+- Mínimo 6 tarjetas de activos visibles en el grid para demostrar la densidad de 
+información.</constraints> 
+</prompt_figma_make> 
+ 
+Resultado esperado:  
+Pantalla de Watchlist con grid de tarjetas de activos, panel de alertas activas y modal de nueva alerta.  
+ 
+  
+=== p13 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 13 de 24 
+ 
+Interfaz de referencia: el panel de Wallets del dashboard Leverix adjunto, que muestra una tabla de 
+activos con precios, variaciones y acciones (Buy, Stake, Swap, Sell): 
+  
+
+=== p14 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 14 de 24 
+Pantalla 3 — Pantalla de Trading / Ejecución de Órdenes 
+Prompt AIAP: Prompt hiperdetallado para Figma Make AI — ver bloque completo a continuación. [Figma 
+Make AI, 2026-09-18] 
+<prompt_figma_make> 
+<role>Eres un diseñador UI/UX especializado en plataformas de ejecución de órdenes bursátiles y 
+experiencia de trading.</role> 
+<context>Pantalla de ejecución de operaciones ("Trade") del prototipo "Ernesto Investing AI". El 
+usuario ya seleccionó un activo desde el Dashboard o la Watchlist y ahora quiere ejecutar una 
+orden de compra o venta.</context> 
+<task>Diseña la pantalla de Trading/Orden con layout de 3 columnas: 
+COLUMNA IZQUIERDA (30%): 
+1. Panel de información del activo: logo/ícono, nombre completo y ticker, precio actual grande, 
+variación del día, rango 52 semanas (barra de progreso), volumen del día, capitalización de 
+mercado. 
+2. Libro de órdenes simplificado: 5 niveles de compra (bid) en verde y 5 de venta (ask) en rojo, 
+con precio y volumen. 
+  
+COLUMNA CENTRAL (45%): 
+3. Gráfico de velas japonesas interactivo con herramientas de dibujo: líneas de tendencia, 
+soporte/resistencia, indicadores técnicos (SMA, EMA, RSI, MACD como selector desplegable). 
+4. Selector de periodo: 1min, 5min, 15min, 1H, 4H, 1D, 1W. 
+  
+COLUMNA DERECHA (25%): 
+5. Formulario de orden: tabs Compra/Venta (verde/rojo), tipo de orden (Mercado, Límite, Stop, 
+Stop-Limit), campos Precio Límite (deshabilitado en orden de mercado), Cantidad (con botones 
+25%/50%/75%/100% del poder de compra), costo estimado total, botón grande "Ejecutar Orden". 
+6. Historial de órdenes recientes del activo: tabla compacta con Fecha, Tipo, Cantidad, Precio, 
+Estado (Ejecutada/Pendiente/Cancelada).</task> 
+<style> 
+- Fondo del gráfico: #131722 (estilo TradingView dark para el área del chart únicamente). 
+- Resto de la interfaz en tema claro: #F0F2F6 fondo, tarjetas blancas. 
+- Botón Compra: gradiente verde #1B7E34 a #2E7D32. Botón Venta: gradiente rojo #C62828 a #B71C1C. 
+- Tipografía monoespaciada (Consolas) para precios y cantidades numéricas. 
+- Transiciones suaves en los tabs Compra/Venta.</style> 
+<constraints> 
+- Desktop 1440x900px. 
+- Textos en español. 
+- El formulario de orden debe mostrar validación en tiempo real: si la cantidad excede el poder 
+de compra, mostrar mensaje en rojo. 
+- Los niveles del libro de órdenes deben tener barras de fondo proporcionales al 
+volumen.</constraints> 
+</prompt_figma_make> 
+ 
+Resultado esperado:  
+Layout de 3 columnas con información del activo, gráfico interactivo estilo TradingView y formulario de 
+orden con validación visual.  
+Interfaz de referencia: las páginas HTML adjuntas de Ernesto Investing AI (Dashboard de Mercado, 
+Clasificador RNNs, Regresor LSTM), que muestran gráficos financieros con controles de periodo, métricas y 
+paleta azul-dorado-verde-rojo. 
+  
+=== p15 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 15 de 24 
+Pantalla 4 — Versión Móvil del Portafolio (3 pantallas) 
+Prompt AIAP: Prompt hiperdetallado para Figma Make AI — ver bloque completo a continuación. [Figma 
+Make AI, 2026-09-18] 
+<prompt_figma_make> 
+<role>Eres un diseñador UI/UX mobile-first especializado en apps de inversión y fintech.</role> 
+<context>Versión móvil del prototipo "Ernesto Investing AI". Necesitamos la vista mobile del 
+portafolio para la presentación del proyecto IHC de la UNMSM.</context> 
+<task>Diseña 3 pantallas móviles (390x844px, iPhone 14) conectadas por flujo de navegación: 
+  
+PANTALLA 1 — Mi Portafolio: 
+- Header con saludo "Hola, Trader" y avatar. 
+- Tarjeta principal: Valor Total del Portafolio en grande, variación del día (absoluta y %), mini 
+gráfico de área de 30 días. 
+- Selector de periodo: 1D, 1S, 1M, 3M, 1A. 
+- Lista de posiciones: cada fila muestra ícono del activo, ticker, nombre, cantidad de acciones, 
+valor en USD, variación % con color. 
+- Barra de navegación inferior: Inicio, Mercados, Operar (botón central prominente), Liga, Más. 
+  
+PANTALLA 2 — Detalle del Activo (al tocar una posición): 
+- Gráfico de velas a pantalla completa con gesture de zoom/pan. 
+- Tabs: Resumen | Técnico | Noticias | Fundamentales. 
+- Tab Resumen: precio actual, variación, apertura, cierre anterior, máximo/mínimo del día, 
+volumen. 
+- Botones flotantes inferiores: "Comprar" (verde) y "Vender" (rojo). 
+  
+PANTALLA 3 — Orden Rápida (bottom sheet): 
+- Bottom sheet que sube desde abajo con handle de arrastre. 
+- Tabs Comprar/Vender. 
+- Campos: tipo de orden, cantidad (con slider), precio estimado. 
+- Botón de confirmación a ancho completo.</task> 
+<style> 
+- Tema claro: fondo #F8F9FB, tarjetas blancas con border-radius: 16px y sombra sutil. 
+- Paleta consistente con la versión desktop: Azul #1F3864, Dorado #C5961A, Verde #1B7E34, Rojo 
+#C62828. 
+- Esquinas muy redondeadas (16px) y espaciado generoso para touch targets de 48px mínimo. 
+- Inspiración: Robinhood, Revolut Invest, la app Fantasy Trading League.</style> 
+<constraints> 
+- 390x844px (iPhone 14). 
+- Textos en español. 
+- Bottom sheet con efecto blur de fondo (backdrop-filter: blur). 
+- Las 3 pantallas deben mostrarse lado a lado en el frame de Figma con flechas de flujo entre 
+ellas.</constraints> 
+</prompt_figma_make> 
+ 
+Resultado esperado: Tres frames de 390×844px con la versión móvil: pantalla de portafolio, detalle del 
+activo y bottom sheet de orden rápida.  
+  
+=== p16 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 16 de 24 
+ 
+Interfaz de referencia: la imagen de Fantasy Trading League adjunta, que muestra la versión móvil con 
+tarjetas de portafolio, lista de posiciones y barra de navegación inferior: 
+ 
+  
+
+=== p17 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 17 de 24 
+Pantalla 5 — Dashboard en Modo Oscuro 
+Prompt AIAP: Prompt hiperdetallado para Figma Make AI — ver bloque completo a continuación. [Figma 
+Make AI, 2026-09-18] 
+<prompt_figma_make> 
+<role>Eres un diseñador UI/UX experto en diseño de modo oscuro para aplicaciones financieras de 
+alta densidad de datos.</role> 
+<context>Variante en modo oscuro ("Dark Mode") del Dashboard principal de "Ernesto Investing AI" 
+para traders que operan en sesiones nocturnas o ambientes con poca luz.</context> 
+<task>Rediseña el Dashboard principal en modo oscuro completo: 
+1. Barra de navegación: fondo #0D1117, logo en dorado #C5961A, texto en #E6EDF3. 
+2. Fondo general: #0D1117 (negro profundo), tarjetas en #161B22 con borde sutil #30363D. 
+3. Las 4 tarjetas KPI con el mismo contenido pero colores adaptados: texto principal en #E6EDF3, 
+texto secundario en #8B949E. 
+4. Gráfico de velas con fondo #0D1117, grid lines en #21262D, velas verdes #238636 y rojas 
+#DA3633. 
+5. Tabla de posiciones con filas alternadas #0D1117 / #161B22, hover en #1F2937. 
+6. Panel lateral: íconos en #8B949E, ítem activo con fondo #1F6FEB20 y texto #58A6FF. 
+7. Selector de tema: toggle sol/luna en la navbar para cambiar entre claro y oscuro.</task> 
+<style> 
+- Paleta dark mode inspirada en GitHub Dark y TradingView Dark. 
+- Contraste suficiente para lectura prolongada: texto principal #E6EDF3, secundario #8B949E, 
+deshabilitado #484F58. 
+- Acentos: Azul #58A6FF para links y selección, Dorado #C5961A para badges premium, Verde 
+#238636, Rojo #DA3633. 
+- Bordes sutiles de 1px en #30363D para separar secciones. 
+- Sombras oscuras: 0 4px 12px rgba(0,0,0,0.4).</style> 
+<constraints> 
+- Desktop 1440x900px. 
+- Textos en español. 
+- El toggle de tema debe ser visualmente prominente y accesible. 
+- Verificar que ningún texto quede con contraste insuficiente contra el fondo 
+oscuro.</constraints> 
+</prompt_figma_make> 
+ 
+Resultado esperado:  
+El Dashboard principal rediseñado en modo oscuro con paleta inspirada en GitHub Dark y TradingView 
+Dark. El toggle de tema debe ser visible en la navbar.  
+  
+=== p18 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 18 de 24 
+ 
+Interfaz de referencia: la imagen del Crypto Prediction Contest App adjunta, que muestra una estética 
+moderna con fondo claro pero elementos de contraste azul/verde/rojo similares a los del modo oscuro: 
+ 
+  
+
+=== p19 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 19 de 24 
+Paso 5 — Conectar las Pantallas en un Prototipo Navegable 
+Enunciado: Una vez generadas y refinadas las 5 pantallas en Figma, el equipo debe conectarlas usando la 
+función Prototype de Figma para crear un flujo de navegación interactivo.  
+Las conexiones mínimas requeridas son: 
+• Dashboard → clic en ítem del menú lateral → Watchlist. 
+• Watchlist → clic en tarjeta de activo → Pantalla de Trading. 
+• Dashboard → clic en fila de la tabla de posiciones → Pantalla de Trading. 
+• Dashboard → toggle de tema → Dashboard Modo Oscuro. 
+• Todas las pantallas → ícono de menú o logo → Dashboard (navegación de retorno). 
+Resultado esperado:  
+Un enlace de Figma Prototype compartible que permita al evaluador navegar entre las pantallas con 
+transiciones suaves. 
+  
+=== p20 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 20 de 24 
+Paso 6 — Análisis Comparativo: Wireframe vs. Prototipo de Alta Fidelidad 
+Enunciado: El equipo debe comparar el wireframe de PlantUML Salt (Paso 3) con el prototipo de alta 
+fidelidad de Figma Make AI (Paso 4) y documentar las diferencias en una tabla. Ejemplo: 
+Criterio Wireframe (Salt) Prototipo Figma Make AI 
+Fidelidad Baja: solo estructura y jerarquía Alta: colores, tipografía, íconos, 
+sombras 
+Tiempo de creación ~15 minutos con el prompt AIAP ~30 minutos (generación + 
+refinamiento) 
+Interactividad Ninguna (imagen estática) Navegable con transiciones entre 
+pantallas 
+Utilidad para 
+evaluación 
+Validar estructura y flujo general Pruebas de usabilidad con usuarios 
+reales 
+Facilidad de iteración Editar texto PlantUML y regenerar Editar directamente en el canvas de 
+Figma 
+Costo de descarte Muy bajo: se borra el código Medio: se invirtió tiempo en 
+refinamiento visual 
+  
+=== p21 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 21 de 24 
+L.5 Ejercicio Propuesto para el Equipo 
+Tomando como base los prompts hiperdetallados proporcionados en el Paso 4, el equipo debe: 
+• Tarea A: Escribir un sexto prompt hiperdetallado (con etiquetas <prompt_figma_make> y 
+</prompt_figma_make>) para una pantalla de Leaderboard / Tabla de Posiciones del juego de 
+simulación bursátil. La pantalla debe mostrar rankings de usuarios, puntuación, portafolio 
+simulado y badges de logros. Inspiración: la imagen del Fantasy Trading League adjunta: 
+ 
+• Tarea B: Generar la pantalla en Figma Make AI usando su prompt y refinarla visualmente. 
+• Tarea C: Conectar la pantalla del Leaderboard al prototipo navegable existente (accesible desde la 
+barra de navegación). 
+• Tarea D: Redactar un párrafo de Discusión de usabilidad que explique:  
+(1) cómo el prototipo permite validar la visibilidad del estado del sistema (heurística 1 de Nielsen), y  
+(2) en qué fase del ciclo DCU se ubica este trabajo. 
+  
+
+=== p22 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 22 de 24 
+L.6 Entregables y Formato de Entrega en el Aula Virtual Classroom 
+N.° Entregable Formato Contenido 
+1 Tabla comparativa de 
+plataformas de referencia 
+Microsoft Word (archivo 
+editable compartido) 
+Capturas anotadas de Yahoo Finance, 
+TradingView, Investing.com, IBKR 
+2 Bocetos en papel (escaneos 
+y/o fotografías) 
+Imágenes JPG/PNG Un boceto por miembro del equipo + 
+boceto ganador marcado 
+3 Wireframe PlantUML Salt Código .puml + imagen 
+PNG 
+Wireframe del Dashboard con 
+comentarios en español 
+4 Prototipo Figma (5 + 1 
+pantallas) 
+Enlace Figma compartido 
+(view) 
+Dashboard, Watchlist, Trading, Móvil, 
+Dark Mode + Leaderboard 
+5 Prototipo navegable Enlace Figma Prototype Flujo navegable entre las 6 pantallas 
+6 Prompt propio del equipo 
+(Tarea A) 
+Texto en el documento Prompt hiperdetallado con etiquetas 
+XML para la pantalla del Leaderboard 
+7 Documento de entrega 
+consolidado 
+PDF en Aula Virtual Todos los anteriores integrados en un 
+solo documento 
+Plazo de entrega: Según el calendario establecido por el docente en el Aula Virtual. Entregas fuera de plazo 
+tienen penalización de 2 puntos por día de retraso. 
+  
+=== p23 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 23 de 24 
+L.7 Rúbrica de Evaluación 
+Criterio Peso Excelente (4) Bueno (3) Regular (2) Deficiente (1) 
+Análisis de 
+referencia (Paso 1) 
+10% 4+ plataformas 
+analizadas con 
+capturas anotadas y 
+hallazgos específicos 
+3 plataformas con 
+anotaciones parciales 
+2 plataformas sin 
+anotaciones 
+detalladas 
+1 o ninguna 
+plataforma 
+Boceto en papel 
+(Paso 2) 
+10% Boceto claro con las 6 
+zonas funcionales, 
+anotaciones y 
+justificación 
+Boceto con 4-5 zonas, 
+pocas anotaciones 
+Boceto incompleto o 
+ilegible 
+Sin boceto 
+Wireframe Salt 
+(Paso 3) 
+15% Wireframe completo, 
+código funcional, 
+comentado en español 
+Wireframe con 4-5 
+zonas, código 
+funcional 
+Wireframe parcial o 
+código con errores 
+Sin wireframe o 
+código no funcional 
+Prompts 
+hiperdetallados 
+(Pasos 4-5) 
+20% Los 5 prompts usan 
+etiquetas XML, 
+incluyen 
+Rol/Contexto/Tarea/E
+stilo/Restricciones 
+completos 
+4 prompts completos Prompts incompletos 
+o sin estructura 
+Prompts genéricos sin 
+detalle 
+Calidad del 
+prototipo Figma 
+(Pasos 4-5) 
+20% 6 pantallas refinadas, 
+navegables, 
+visualmente 
+coherentes y con 
+contenido bursátil real 
+5 pantallas, algunas 
+sin refinar 
+Menos de 5 pantallas 
+o sin navegación 
+Pantallas sin refinar ni 
+conectar 
+Prompt propio del 
+equipo (Tarea A) 
+15% Prompt original, 
+hiperdetallado, con 
+etiquetas XML y 
+resultado generado en 
+Figma 
+Prompt detallado pero 
+sin etiquetas XML 
+Prompt genérico Sin prompt propio 
+Discusión de 
+usabilidad (Tarea D) 
+10% Vincula el prototipo 
+con heurística de 
+Nielsen y fase DCU con 
+argumentos sólidos 
+Mención superficial de 
+la heurística 
+Sin vínculo claro con el 
+marco teórico 
+Sin discusión 
+Nota final de la práctica grupal: Promedio ponderado de los criterios × 5 = nota en escala vigesimal (0 a 20) 
+  
+=== p24 ===
+26.09.18.v1.Guia_Lab_04_Prototipado_Interfaces_IHC_2026-2.docx - Página 24 de 24 
+L.8 Referencias Web 
+• https://www.figma.com/  
+• https://help.figma.com/hc/en-us/articles/25388041448599-Use-Figma-Make  
+• https://finance.yahoo.com/  
+• https://www.tradingview.com/  
+• https://www.investing.com/  
+• https://www.interactivebrokers.com/  
+• https://en.wikipedia.org/wiki/Prototype  
+• https://es.wikipedia.org/wiki/Prototipo  
+• https://en.wikipedia.org/wiki/User-centered_design  
+• https://es.wikipedia.org/wiki/Dise%C3%B1o_centrado_en_el_usuario  
+• https://www.nngroup.com/articles/paper-prototyping/  
+• https://www.interaction-design.org/literature/topics/prototyping  
+• https://plantuml.com/es/salt  
+• https://lawsofux.com/  
+• https://www.nngroup.com/articles/ten-usability-heuristics/  
+• https://dribbble.com/search/stock-trading  
+ 

@@ -1,0 +1,38 @@
+<role>Eres un diseñador UI/UX mobile-first especializado en apps de inversión y fintech.</role>
+<context>Versión móvil del prototipo "Ernesto Investing AI". Necesitamos la vista mobile del
+portafolio para la presentación del proyecto IHC de la UNMSM.</context>
+<task>Diseña 3 pantallas móviles (390x844px, iPhone 14) conectadas por flujo de navegación:
+
+PANTALLA 1 — Mi Portafolio:
+- Header con saludo "Hola, Trader" y avatar.
+- Tarjeta principal: Valor Total del Portafolio en grande, variación del día (absoluta y %), mini
+gráfico de área de 30 días.
+- Selector de periodo: 1D, 1S, 1M, 3M, 1A.
+- Lista de posiciones: cada fila muestra ícono del activo, ticker, nombre, cantidad de acciones,
+valor en USD, variación % con color.
+- Barra de navegación inferior: Inicio, Mercados, Operar (botón central prominente), Liga, Más.
+
+PANTALLA 2 — Detalle del Activo (al tocar una posición):
+- Gráfico de velas a pantalla completa con gesture de zoom/pan.
+- Tabs: Resumen | Técnico | Noticias | Fundamentales.
+- Tab Resumen: precio actual, variación, apertura, cierre anterior, máximo/mínimo del día,
+volumen.
+- Botones flotantes inferiores: "Comprar" (verde) y "Vender" (rojo).
+
+PANTALLA 3 — Orden Rápida (bottom sheet):
+- Bottom sheet que sube desde abajo con handle de arrastre.
+- Tabs Comprar/Vender.
+- Campos: tipo de orden, cantidad (con slider), precio estimado.
+- Botón de confirmación a ancho completo.</task>
+<style>
+- Tema claro: fondo #F8F9FB, tarjetas blancas con border-radius: 16px y sombra sutil.
+- Paleta consistente con la versión desktop: Azul #1F3864, Dorado #C5961A, Verde #1B7E34, Rojo
+#C62828.
+- Esquinas muy redondeadas (16px) y espaciado generoso para touch targets de 48px mínimo.
+- Inspiración: Robinhood, Revolut Invest, la app Fantasy Trading League.</style>
+<constraints>
+- 390x844px (iPhone 14).
+- Textos en español.
+- Bottom sheet con efecto blur de fondo (backdrop-filter: blur).
+- Las 3 pantallas deben mostrarse lado a lado en el frame de Figma con flechas de flujo entre
+ellas.</constraints>

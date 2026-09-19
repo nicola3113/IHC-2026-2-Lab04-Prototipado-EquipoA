@@ -1,0 +1,28 @@
+<role>Eres un diseñador UI/UX experto en diseño de modo oscuro para aplicaciones financieras de
+alta densidad de datos.</role>
+<context>Variante en modo oscuro ("Dark Mode") del Dashboard principal de "Ernesto Investing AI"
+para traders que operan en sesiones nocturnas o ambientes con poca luz.</context>
+<task>Rediseña el Dashboard principal en modo oscuro completo:
+1. Barra de navegación: fondo #0D1117, logo en dorado #C5961A, texto en #E6EDF3.
+2. Fondo general: #0D1117 (negro profundo), tarjetas en #161B22 con borde sutil #30363D.
+3. Las 4 tarjetas KPI con el mismo contenido pero colores adaptados: texto principal en #E6EDF3,
+texto secundario en #8B949E.
+4. Gráfico de velas con fondo #0D1117, grid lines en #21262D, velas verdes #238636 y rojas
+#DA3633.
+5. Tabla de posiciones con filas alternadas #0D1117 / #161B22, hover en #1F2937.
+6. Panel lateral: íconos en #8B949E, ítem activo con fondo #1F6FEB20 y texto #58A6FF.
+7. Selector de tema: toggle sol/luna en la navbar para cambiar entre claro y oscuro.</task>
+<style>
+- Paleta dark mode inspirada en GitHub Dark y TradingView Dark.
+- Contraste suficiente para lectura prolongada: texto principal #E6EDF3, secundario #8B949E,
+deshabilitado #484F58.
+- Acentos: Azul #58A6FF para links y selección, Dorado #C5961A para badges premium, Verde
+#238636, Rojo #DA3633.
+- Bordes sutiles de 1px en #30363D para separar secciones.
+- Sombras oscuras: 0 4px 12px rgba(0,0,0,0.4).</style>
+<constraints>
+- Desktop 1440x900px.
+- Textos en español.
+- El toggle de tema debe ser visualmente prominente y accesible.
+- Verificar que ningún texto quede con contraste insuficiente contra el fondo
+oscuro.</constraints>

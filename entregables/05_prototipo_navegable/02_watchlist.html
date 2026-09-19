@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ernesto Investing AI — Watchlist y Alertas</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .wl-grid{display:grid;grid-template-columns:1fr 306px;gap:16px;height:calc(100% - 76px)}
+  .filtros{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--borde);
+    border-radius:var(--radio);box-shadow:var(--sombra);padding:10px 12px;margin-bottom:14px}
+  .bus2{position:relative;flex:1}
+  .bus2 input{width:100%;height:32px;border:1px solid var(--borde);border-radius:8px;
+    padding:0 10px 0 32px;font-size:13px;color:var(--texto);outline:none;background:#FAFBFD}
+  .bus2 svg{position:absolute;left:10px;top:8px}
+  .tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-content:start}
+  .act{background:#fff;border:1px solid var(--borde);border-radius:var(--radio);box-shadow:var(--sombra);
+    padding:11px 13px;transition:.18s}
+  .act:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.12);border-color:#CFD8E6}
+  .act .top{display:flex;align-items:flex-start;justify-content:space-between}
+  .act .tkr{font-family:var(--mono);font-weight:700;color:var(--azul);font-size:14px}
+  .act .nmb{font-size:11.6px;color:var(--texto-3);margin-top:1px}
+  .act .prc{font-size:21px;font-weight:700;letter-spacing:-.6px;margin-top:8px;font-variant-numeric:tabular-nums}
+  .act .var{font-size:12.6px;font-weight:650;margin-top:1px;font-variant-numeric:tabular-nums}
+  .act .spk{height:26px;margin:5px 0 7px}
+  .act .btns{display:flex;gap:7px}
+  .act .btns .btn{flex:1}
+  .tipo{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    padding:2px 7px;border-radius:5px;background:#EEF1F7;color:var(--texto-2)}
+  .alertas{display:flex;flex-direction:column;min-height:0}
+  .al-body{flex:1;overflow:hidden}
+  .al{display:flex;gap:10px;align-items:flex-start;padding:11px 14px;border-bottom:1px solid #F1F3F8}
+  .al:last-child{border-bottom:0}
+  .al .txt{flex:1;min-width:0}
+  .al .txt b{font-family:var(--mono);font-size:12.6px;color:var(--azul);display:block}
+  .al .txt span{font-size:11.8px;color:var(--texto-2)}
+  .al .est{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    padding:2px 6px;border-radius:5px;margin-top:4px;display:inline-block}
+  .al .est.a{background:rgba(27,126,52,.11);color:var(--verde)}
+  .al .est.d{background:rgba(197,150,26,.18);color:#8A6710}
+  .sw{width:34px;height:19px;border-radius:999px;background:#CFD6E3;position:relative;flex:0 0 34px;margin-top:3px}
+  .sw:after{content:"";position:absolute;width:15px;height:15px;border-radius:50%;background:#fff;top:2px;left:2px;
+    box-shadow:0 1px 2px rgba(0,0,0,.3)}
+  .sw.on{background:var(--verde)} .sw.on:after{left:17px}
+  .del{color:var(--texto-3);font-size:15px;line-height:1;margin-top:3px}
+  /* ---- modal ---- */
+  .overlay{position:fixed;inset:0;background:rgba(9,14,24,.48);z-index:70;
+    display:grid;place-items:center}
+  .modal{width:480px;max-width:480px;background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.35);
+    overflow:hidden}
+  .modal .mh{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;
+    border-bottom:1px solid var(--borde)}
+  .modal .mh h3{font-size:16px;color:var(--azul)}
+  .modal .mb{padding:16px 20px 6px}
+  .campo{margin-bottom:13px}
+  .campo label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    color:var(--texto-3);margin-bottom:5px}
+  .campo input,.campo select{width:100%;height:36px;border:1px solid var(--borde);border-radius:8px;
+    padding:0 11px;font-size:13.5px;color:var(--texto);background:#fff;outline:none}
+  .campo .hint{font-size:11.5px;color:var(--texto-3);margin-top:4px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .radios{display:flex;gap:8px}
+  .radios b{flex:1;text-align:center;font-size:12.5px;font-weight:600;border:1px solid var(--borde);
+    border-radius:8px;padding:7px 0;color:var(--texto-2)}
+  .radios b.on{border-color:var(--azul);background:rgba(31,56,100,.07);color:var(--azul)}
+  .modal .mf{display:flex;gap:10px;justify-content:flex-end;padding:14px 20px;border-top:1px solid var(--borde);
+    background:#FAFBFD}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <a class="logo" href="01_dashboard_claro.html"><span class="mark">EI</span> Ernesto Investing AI</a>
+  <div class="buscador">
+    <svg class="lupa" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="text" placeholder="Buscar ticker, empresa o índice…">
+  </div>
+  <div class="nav-sp"></div>
+  <div class="nav-acc">
+    <a class="tema" href="05_dashboard_oscuro.html"><b class="on">☀</b><b>☾</b></a>
+    <div class="usuario"><span class="avatar">NC</span> Nicolás C.</div>
+  </div>
+</header>
+
+<aside class="sidebar">
+  <div class="side-tit">Navegación</div>
+  <a class="side-it" href="01_dashboard_claro.html"><span class="ic">▦</span> Dashboard</a>
+  <a class="side-it" href="06_leaderboard.html"><span class="ic">◈</span> Mercados</a>
+  <a class="side-it" href="04_movil_portafolio.html"><span class="ic">▤</span> Portafolio</a>
+  <a class="side-it act" href="02_watchlist.html"><span class="ic">★</span> Watchlist</a>
+  <a class="side-it" href="03_trading.html"><span class="ic">⇄</span> Operaciones</a>
+  <a class="side-it" href="03_trading.html"><span class="ic">◷</span> Historial</a>
+  <a class="side-it" href="06_leaderboard.html"><span class="ic">♛</span> Leaderboard</a>
+  <div class="side-sep"></div>
+  <a class="side-it" href="01_dashboard_claro.html"><span class="ic">⚙</span> Configuración</a>
+</aside>
+
+<main class="content">
+
+  <div class="page-head">
+    <div>
+      <h1>Mi Watchlist <span class="chip bl" style="font-size:12.5px;vertical-align:5px">12 activos</span></h1>
+      <p>Activos en seguimiento y alertas de precio configuradas</p>
+    </div>
+    <button class="btn pri">＋ Agregar ticker</button>
+  </div>
+
+  <div class="wl-grid">
+
+    <div style="display:flex;flex-direction:column;min-width:0;min-height:0">
+      <div class="filtros">
+        <div class="bus2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A93A6" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="text" placeholder="Filtrar por nombre o ticker…">
+        </div>
+        <select class="sel"><option>Tipo: todos</option><option>Acciones</option><option>ETF</option><option>Criptomonedas</option><option>Índices</option></select>
+        <select class="sel"><option>Ordenar por: variación %</option><option>Nombre</option><option>Precio</option><option>Volumen</option></select>
+        <div class="seg"><b class="on">Cuadrícula</b><b>Lista</b></div>
+      </div>
+
+      <div class="tarjetas">
+        <div class="act">
+          <div class="top"><div><div class="tkr">NVDA</div><div class="nmb">NVIDIA Corporation</div></div><span class="tipo">Acción</span></div>
+          <div class="prc">$ 121.40</div>
+          <div class="var pos">+$ 4.78 &nbsp;(+4.10 %)</div>
+          <div class="spk"><img src="assets/wl_w1.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">TSLA</div><div class="nmb">Tesla Inc.</div></div><span class="tipo">Acción</span></div>
+          <div class="prc">$ 245.30</div>
+          <div class="var neg">−$ 5.26 &nbsp;(−2.10 %)</div>
+          <div class="spk"><img src="assets/wl_w2.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">BTC-USD</div><div class="nmb">Bitcoin</div></div><span class="tipo">Cripto</span></div>
+          <div class="prc">$ 63,180.00</div>
+          <div class="var pos">+$ 1,684.20 &nbsp;(+2.74 %)</div>
+          <div class="spk"><img src="assets/wl_w3.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">BVN</div><div class="nmb">Cía. de Minas Buenaventura</div></div><span class="tipo">Acción</span></div>
+          <div class="prc">$ 14.25</div>
+          <div class="var pos">+$ 0.33 &nbsp;(+2.35 %)</div>
+          <div class="spk"><img src="assets/wl_w4.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">FSM</div><div class="nmb">Fortuna Silver Mines Inc.</div></div><span class="tipo">Acción</span></div>
+          <div class="prc">$ 5.80</div>
+          <div class="var neg">−$ 0.19 &nbsp;(−3.22 %)</div>
+          <div class="spk"><img src="assets/wl_w5.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">SPY</div><div class="nmb">SPDR S&amp;P 500 ETF Trust</div></div><span class="tipo">ETF</span></div>
+          <div class="prc">$ 612.84</div>
+          <div class="var pos">+$ 1.04 &nbsp;(+0.17 %)</div>
+          <div class="spk"><img src="assets/wl_w6.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">AAPL</div><div class="nmb">Apple Inc.</div></div><span class="tipo">Acción</span></div>
+          <div class="prc">$ 198.50</div>
+          <div class="var pos">+$ 2.06 &nbsp;(+1.05 %)</div>
+          <div class="spk"><img src="assets/wl_w1.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">ETH-USD</div><div class="nmb">Ethereum</div></div><span class="tipo">Cripto</span></div>
+          <div class="prc">$ 2,620.86</div>
+          <div class="var pos">+$ 143.92 &nbsp;(+5.81 %)</div>
+          <div class="spk"><img src="assets/wl_w3.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+        <div class="act">
+          <div class="top"><div><div class="tkr">ABX.TO</div><div class="nmb">Barrick Gold Corporation</div></div><span class="tipo">Acción</span></div>
+          <div class="prc">$ 22.10</div>
+          <div class="var pos">+$ 0.20 &nbsp;(+0.90 %)</div>
+          <div class="spk"><img src="assets/wl_w4.svg" alt="" style="width:100%;height:100%"></div>
+          <div class="btns"><button class="btn sec sm">🔔 Alerta</button><a class="btn pri sm" href="03_trading.html">Operar</a></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="card alertas">
+      <div class="card-h">
+        <div><h2>Alertas activas</h2><div class="sub">4 configuradas · 1 disparada</div></div>
+      </div>
+      <div class="al-body">
+        <div class="al">
+          <div class="txt"><b>NVDA</b><span>Precio sube de $ 120.00</span><br><span class="est d">Disparada 09:42</span></div>
+          <div class="sw on"></div><div class="del">🗑</div>
+        </div>
+        <div class="al">
+          <div class="txt"><b>TSLA</b><span>Precio baja de $ 240.00</span><br><span class="est a">Activa</span></div>
+          <div class="sw on"></div><div class="del">🗑</div>
+        </div>
+        <div class="al">
+          <div class="txt"><b>BTC-USD</b><span>Variación diaria &gt; 5 %</span><br><span class="est a">Activa</span></div>
+          <div class="sw on"></div><div class="del">🗑</div>
+        </div>
+        <div class="al">
+          <div class="txt"><b>BVN</b><span>Precio sube de $ 15.00</span><br><span class="est a">Activa</span></div>
+          <div class="sw"></div><div class="del">🗑</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal: Nueva alerta -->
+  <div class="overlay" id="modalAlerta">
+    <div class="modal">
+      <div class="mh"><h3>Nueva alerta de precio</h3><span style="color:var(--texto-3);font-size:18px">✕</span></div>
+      <div class="mb">
+        <div class="campo">
+          <label>Ticker</label>
+          <input type="text" value="NVDA — NVIDIA Corporation">
+          <div class="hint">Autocompletado sobre los 12 activos de su watchlist</div>
+        </div>
+        <div class="dos">
+          <div class="campo">
+            <label>Condición</label>
+            <select><option>Mayor que</option><option>Menor que</option><option>Variación % diaria</option></select>
+          </div>
+          <div class="campo">
+            <label>Valor umbral (USD)</label>
+            <input type="text" value="130.00">
+          </div>
+        </div>
+        <div class="campo">
+          <label>Notificación</label>
+          <div class="radios"><b>Correo</b><b class="on">Push</b><b>Ambas</b></div>
+        </div>
+      </div>
+      <div class="mf">
+        <button class="btn sec">Cancelar</button>
+        <button class="btn pri">Crear alerta</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>

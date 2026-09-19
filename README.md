@@ -16,10 +16,11 @@ prototipo navegable.
 
 | Recurso | Enlace |
 |---|---|
+| **Figma Make** (prompts ejecutados con la herramienta) | https://www.figma.com/make/9DfvD19QGGffIGtJfe47DP/Dise%C3%B1ar-pantalla-principal-Dashboard |
 | **Archivo de Figma** (7 pantallas, solo lectura) | https://www.figma.com/design/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A |
 | **Prototipo navegable** (Figma Prototype) | https://www.figma.com/proto/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A?node-id=1-23&starting-point-node-id=1-23&scaling=contain |
 | **Prototipo ejecutable en navegador** | [`entregables/05_prototipo_navegable/index.html`](entregables/05_prototipo_navegable/index.html) |
-| **Informe consolidado (PDF, 54 pp.)** | [`entregables/06_documento_consolidado/`](entregables/06_documento_consolidado) |
+| **Informe consolidado (PDF, 63 pp.)** | [`entregables/06_documento_consolidado/`](entregables/06_documento_consolidado) |
 | **Guion de la exposición en vídeo** | [`entregables/07_guion_exposicion/`](entregables/07_guion_exposicion) |
 | **Wireframe en PlantUML** | [`entregables/03_wireframe_salt/`](entregables/03_wireframe_salt) |
 
@@ -50,7 +51,7 @@ prototipo navegable.
 | 1 | Tabla comparativa de 4 plataformas + capturas anotadas | [`01_analisis_referencia/`](entregables/01_analisis_referencia) · Tabla 3 y Figuras 1-4 del informe |
 | 2 | 11 bocetos en papel, ganador marcado | [`02_bocetos_papel/`](entregables/02_bocetos_papel) |
 | 3 | Wireframe PlantUML Salt (.puml + PNG + SVG) | [`03_wireframe_salt/`](entregables/03_wireframe_salt) |
-| 4 | Prototipo de alta fidelidad (5 + 1 pantallas) + los 6 prompts | [`04_prototipo_alta_fidelidad/`](entregables/04_prototipo_alta_fidelidad) |
+| 4 | Prototipo de alta fidelidad (5 + 1 pantallas) + los 6 prompts + salida de Figma Make | [`04_prototipo_alta_fidelidad/`](entregables/04_prototipo_alta_fidelidad) |
 | 5 | Prototipo navegable | [`05_prototipo_navegable/`](entregables/05_prototipo_navegable) + enlace de Figma |
 | 6 | Prompt propio del equipo (Tarea A — Leaderboard) | [`prompts/Prompt_6_Leaderboard_TareaA_EquipoA.txt`](entregables/04_prototipo_alta_fidelidad/prompts/Prompt_6_Leaderboard_TareaA_EquipoA.txt) |
 | 7 | Documento consolidado (PDF + DOCX) | [`06_documento_consolidado/`](entregables/06_documento_consolidado) |
@@ -95,7 +96,7 @@ S4/
 │   ├── 01_analisis_referencia/       4 figuras anotadas
 │   ├── 02_bocetos_papel/             11 bocetos
 │   ├── 03_wireframe_salt/            .puml / .png / .svg / URL
-│   ├── 04_prototipo_alta_fidelidad/  7 capturas + prompts/
+│   ├── 04_prototipo_alta_fidelidad/  7 capturas + prompts/ + figma_make/
 │   ├── 05_prototipo_navegable/       index.html + 6 páginas + assets/
 │   ├── 06_documento_consolidado/     Informe .docx y .pdf
 │   └── 07_guion_exposicion/          Guion .docx y .pdf
@@ -110,10 +111,18 @@ S4/
 1. **Prototipo:** abrir el enlace de Figma Prototype, o bien
    `entregables/05_prototipo_navegable/index.html` en el navegador (ventana maximizada, zoom 100 %).
 2. **Informe:** `entregables/06_documento_consolidado/Informe_Lab04_Prototipado_Interfaces_EquipoA.pdf`
-   (54 páginas, formato APA 7).
+   (63 páginas, formato APA 7).
 3. **Vídeo:** seguir el guion de `entregables/07_guion_exposicion/`. Son 12 bloques repartidos entre
    los once integrantes, ninguno de más de 3 minutos; cada bloque indica qué decir y qué mostrar en
    pantalla.
+
+---
+
+## 🧪 Sobre Figma Make
+
+Los seis prompts hiperdetallados se ejecutaron en Figma Make. La herramienta generó el **Dashboard** en 2 min 38 s y la **Watchlist** a continuación; las capturas de esa salida están en [`04_prototipo_alta_fidelidad/figma_make/`](entregables/04_prototipo_alta_fidelidad/figma_make).
+
+Los cuatro prompts restantes no pudieron ejecutarse: el **plan gratuito de Figma agota su crédito diario de IA tras dos generaciones**. Además, la salida de Make dejó vacía el área del gráfico de velas del Dashboard. Por eso el equipo implementó las seis pantallas a partir de los mismos prompts y las consolidó en el archivo de Figma que se entrega; la salida de Make se conserva como evidencia del Paso 4 y como punto de comparación. Todo esto está documentado en la sección 7.1 del informe.
 
 ---
 

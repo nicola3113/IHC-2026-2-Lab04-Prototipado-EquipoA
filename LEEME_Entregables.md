@@ -22,10 +22,10 @@ Ambos enlaces de Figma están configurados como **cualquier persona con el enlac
 | 1 | Tabla comparativa de plataformas de referencia | Word editable | Sección 4 y Tabla 3 del informe; capturas anotadas en `entregables/01_analisis_referencia/` |
 | 2 | Bocetos en papel (uno por integrante, ganador marcado) | JPG/PNG | `entregables/02_bocetos_papel/` (11 archivos; `boceto_01.png` es el ganador) |
 | 3 | Wireframe PlantUML Salt | .puml + PNG | `entregables/03_wireframe_salt/` (`.puml`, `.png`, `.svg` y URL permanente) |
-| 4 | Prototipo Figma (5 + 1 pantallas) | Enlace Figma (view) | Enlace arriba; capturas en `entregables/04_prototipo_alta_fidelidad/`; los 6 prompts en `.../prompts/`; salida de Figma Make en `.../figma_make/` |
+| 4 | Prototipo Figma (5 + 1 pantallas) | Enlace Figma (view) | Enlace arriba; capturas en `entregables/04_prototipo_alta_fidelidad/`; los 6 prompts en `.../prompts/`; salida real de Figma Make (3 pantallas) en `.../figma_make/` |
 | 5 | Prototipo navegable | Enlace Figma Prototype | Enlace arriba; versión HTML en `entregables/05_prototipo_navegable/index.html` |
 | 6 | Prompt propio del equipo (Tarea A) | Texto en el documento | Sección 10.1 del informe y `.../prompts/Prompt_6_Leaderboard_TareaA_EquipoA.txt` |
-| 7 | Documento de entrega consolidado | PDF | `entregables/06_documento_consolidado/` (.pdf de 63 pp. y .docx editable) |
+| 7 | Documento de entrega consolidado | PDF | `entregables/06_documento_consolidado/` (.pdf de 65 pp. y .docx editable) |
 | — | Guion de la exposición en vídeo | — | `entregables/07_guion_exposicion/` (.docx y .pdf) |
 
 ## Estructura de carpetas

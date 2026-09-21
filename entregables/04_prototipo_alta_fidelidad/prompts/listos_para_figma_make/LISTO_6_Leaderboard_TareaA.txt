@@ -1,0 +1,98 @@
+SISTEMA DE DISENO OBLIGATORIO DEL PROYECTO "Ernesto Investing AI"
+Respeta estos valores al pie de la letra: esta pantalla forma parte de un conjunto de seis que
+deben verse como un mismo producto. No inventes otra paleta ni otra tipografia.
+
+- Fondo general tema claro #F0F2F6. Superficie de tarjeta #FFFFFF. Borde y separador #E2E6EE.
+- Fondo general tema oscuro #0D1117. Superficie de tarjeta #161B22. Borde #30363D.
+- Texto principal claro #161C27, secundario #5B6478. Texto principal oscuro #E6EDF3,
+  secundario #8B949E.
+- Azul corporativo #1F3864 (barra superior, encabezados y seleccion); en oscuro usa #58A6FF.
+- Dorado de acento #C5961A (insignias, liga y logotipo), igual en ambos temas.
+- Verde de ganancia #1B7E34 (en oscuro #238636). Rojo de perdida #C62828 (en oscuro #DA3633).
+- Radio de esquina 12 px en escritorio y 16 px en movil.
+- Sombra de tarjeta 0 2px 10px rgba(0,0,0,.09) en claro y 0 4px 12px rgba(0,0,0,.4) en oscuro.
+- Tipografia general Inter o Segoe UI en pesos 400, 600 y 700.
+- Tipografia monoespaciada Consolas con cifras tabulares para todo dato numerico: precios,
+  cantidades, porcentajes y P&L, de modo que las columnas queden alineadas verticalmente.
+- Importes con separador de miles y dos decimales. Porcentajes con dos decimales y signo
+  explicito (+ o -), porque el color no puede ser el unico portador de significado.
+
+DATOS DE MUESTRA QUE DEBES USAR (no los cambies por otros)
+- Usuario conectado: Nicolas C., avatar con las iniciales NC.
+- Activo protagonista: BVN, Cia. de Minas Buenaventura S.A.A., NYSE, 14.25 USD, +0.33 (+2.35 %).
+- Cartera: BVN, FSM (Fortuna Silver Mines), ABX.TO (Barrick Gold), AAPL (Apple), TSLA (Tesla).
+- Valor del portafolio 125,430.50 USD; ganancia del dia +2,450.00 USD (+1.26 %); poder de compra
+  68,420.00 USD; puesto en la liga #128 de 1,024.
+- Top Movers, exactamente cinco: NVDA, BTC-USD, AAPL, TSLA y FSM.
+- Advierte en la interfaz que las cifras son simuladas con fines academicos.
+
+ESPECIFICACION DE LA PANTALLA
+
+<prompt_figma_make>
+<role>Eres un diseñador UI/UX senior especializado en gamificación de productos financieros y en
+tablas de clasificación de alta densidad de datos.</role>
+
+<context>Sexta pantalla del prototipo "Ernesto Investing AI", el sitio web de mercado bursátil
+que el Equipo A desarrolla para el curso de Interacción Hombre-Computador de la UNMSM. La
+plataforma incluye una liga de simulación bursátil: cada participante recibe un capital
+simulado de USD 100,000.00 al inicio de la temporada y compite durante doce semanas. El
+público objetivo son estudiantes universitarios e inversores principiantes, de modo que la
+pantalla debe motivar sin inducir a operar en exceso: la competencia se presenta como
+aprendizaje, no como apuesta.</context>
+
+<task>Diseña la pantalla de Leaderboard / Tabla de Posiciones de la liga con los siguientes
+elementos obligatorios:
+1. Reutiliza la barra de navegación superior y el panel lateral izquierdo del Dashboard
+   principal, con el ítem "Leaderboard" marcado como activo.
+2. Encabezado de página con el título "Leaderboard · Liga de Simulación Bursátil" y un
+   subtítulo con la temporada, el número total de participantes y el capital inicial simulado.
+3. Controles de filtrado a la derecha del encabezado: control segmentado de periodo
+   (Diario, Semanal, Mensual, Temporada) y desplegable de liga (Universitaria, Abierta, Cripto).
+4. Podio de tres tarjetas para los primeros puestos, con el primer lugar en el centro y algo
+   más alto que los laterales. Cada tarjeta muestra medalla, nombre, universidad y usuario,
+   puntuación y rentabilidad porcentual. Una franja superior de color distingue oro, plata y
+   bronce.
+5. Tabla de clasificación general con las columnas: puesto, participante (avatar, nombre y
+   usuario), puntuación, valor del portafolio simulado, rentabilidad porcentual, número de
+   operaciones y logros. La fila del usuario que ha iniciado sesión debe quedar resaltada con
+   un fondo azul tenue, una insignia "Tú" y su puesto sobre un distintivo azul, aunque su
+   posición esté lejos de las primeras: el usuario siempre debe poder encontrarse sin buscar.
+6. Columna de logros con insignias cuadradas pequeñas (trofeo, tendencia al alza, racha,
+   diana, diamante), diferenciando las obtenidas de las bloqueadas.
+7. Panel lateral derecho con dos tarjetas: (a) "Tu posición en la liga", con el puesto en
+   cuerpo grande, la variación de puestos respecto de la semana anterior, un minigráfico de
+   área con la evolución del puesto y una cuadrícula de seis métricas (puntuación,
+   rentabilidad, portafolio, operaciones, porcentaje de aciertos y racha actual), más un aviso
+   con los días restantes de temporada; y (b) "Logros", con una cuadrícula de doce insignias
+   donde las no obtenidas aparecen atenuadas al 42 % de opacidad.
+8. Botón secundario "Exportar clasificación" en la cabecera de la tabla.</task>
+
+<style>
+- Reutiliza el sistema de diseño del Dashboard: fondo #F0F2F6, tarjetas blancas, borde #E2E6EE,
+  radio de 12 px y sombra 0 2px 10px rgba(0,0,0,.09).
+- Paleta: azul #1F3864 para encabezados y selección, dorado #C5961A para medallas, insignias y
+  la franja del primer puesto, verde #1B7E34 para rentabilidades positivas y rojo #C62828 para
+  las negativas.
+- Tipografía Inter o Segoe UI en pesos 400, 600 y 700; tipografía monoespaciada Consolas con
+  cifras tabulares para puntuaciones, importes y porcentajes, de modo que las columnas
+  numéricas queden alineadas verticalmente.
+- El podio debe leerse antes que la tabla: más aire, cuerpo tipográfico mayor y color de acento.
+- Efecto hover sutil en las filas de la tabla y en las tarjetas del podio.</style>
+
+<constraints>
+- Escritorio de 1440 × 900 px, sin desplazamiento vertical en la vista inicial.
+- Todos los textos y etiquetas en español.
+- Los importes deben usar separador de miles y dos decimales; los porcentajes, dos decimales y
+  signo explícito.
+- Deben verse al menos ocho filas de clasificación, incluida obligatoriamente la del usuario
+  que ha iniciado sesión.
+- El color no puede ser el único portador de significado: toda variación porcentual debe llevar
+  además el signo + o − delante del número.
+- No inventar datos de participantes reales: usar los nombres del Equipo A como datos de
+  muestra y advertir en la interfaz que las cifras son simuladas.</constraints>
+</prompt_figma_make>
+
+RECORDATORIO FINAL
+- Textos y etiquetas en espanol.
+- Respeta el tamano de lienzo indicado en las restricciones.
+- No cambies el activo protagonista, el nombre del usuario ni el numero de Top Movers.

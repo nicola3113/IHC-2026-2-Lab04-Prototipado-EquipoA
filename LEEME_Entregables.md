@@ -8,7 +8,8 @@ Fecha: 18 de septiembre de 2026
 
 | Recurso | Enlace |
 |---------|--------|
-| Figma Make (prompts ejecutados) | https://www.figma.com/make/9DfvD19QGGffIGtJfe47DP/Dise%C3%B1ar-pantalla-principal-Dashboard |
+| App generada con Figma Make (navegable) | https://auburn-squid-75629760.figma.site/ |
+| Figma Make (archivo con los prompts) | https://www.figma.com/make/9DfvD19QGGffIGtJfe47DP/Dise%C3%B1ar-pantalla-principal-Dashboard |
 | Archivo de Figma (vista, 7 pantallas) | https://www.figma.com/design/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A |
 | Prototipo navegable (Figma Prototype) | https://www.figma.com/proto/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A?node-id=1-23&starting-point-node-id=1-23&scaling=contain |
 | Prototipo ejecutable en navegador | `entregables/05_prototipo_navegable/index.html` |
@@ -22,10 +23,10 @@ Ambos enlaces de Figma están configurados como **cualquier persona con el enlac
 | 1 | Tabla comparativa de plataformas de referencia | Word editable | Sección 4 y Tabla 3 del informe; capturas anotadas en `entregables/01_analisis_referencia/` |
 | 2 | Bocetos en papel (uno por integrante, ganador marcado) | JPG/PNG | `entregables/02_bocetos_papel/` (11 archivos; `boceto_01.png` es el ganador) |
 | 3 | Wireframe PlantUML Salt | .puml + PNG | `entregables/03_wireframe_salt/` (`.puml`, `.png`, `.svg` y URL permanente) |
-| 4 | Prototipo Figma (5 + 1 pantallas) | Enlace Figma (view) | Enlace arriba; capturas en `entregables/04_prototipo_alta_fidelidad/`; los 6 prompts en `.../prompts/`; salida real de Figma Make (3 pantallas) en `.../figma_make/` |
+| 4 | Prototipo Figma (5 + 1 pantallas) | Enlace Figma (view) | Enlace arriba; capturas en `entregables/04_prototipo_alta_fidelidad/`; los 6 prompts en `.../prompts/`; salida real de Figma Make (4 pantallas) en `.../figma_make/` |
 | 5 | Prototipo navegable | Enlace Figma Prototype | Enlace arriba; versión HTML en `entregables/05_prototipo_navegable/index.html` |
 | 6 | Prompt propio del equipo (Tarea A) | Texto en el documento | Sección 10.1 del informe y `.../prompts/Prompt_6_Leaderboard_TareaA_EquipoA.txt` |
-| 7 | Documento de entrega consolidado | PDF | `entregables/06_documento_consolidado/` (.pdf de 65 pp. y .docx editable) |
+| 7 | Documento de entrega consolidado | PDF | `entregables/06_documento_consolidado/` (.pdf de 66 pp. y .docx editable) |
 | — | Guion de la exposición en vídeo | — | `entregables/07_guion_exposicion/` (.docx y .pdf) |
 
 ## Estructura de carpetas

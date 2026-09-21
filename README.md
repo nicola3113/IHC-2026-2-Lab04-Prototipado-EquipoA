@@ -16,11 +16,12 @@ prototipo navegable.
 
 | Recurso | Enlace |
 |---|---|
-| **Figma Make** (prompts ejecutados con la herramienta) | https://www.figma.com/make/9DfvD19QGGffIGtJfe47DP/Dise%C3%B1ar-pantalla-principal-Dashboard |
+| **App generada con Figma Make** (navegable, 4 pantallas) | https://auburn-squid-75629760.figma.site/ |
+| **Figma Make** (archivo con los prompts ejecutados) | https://www.figma.com/make/9DfvD19QGGffIGtJfe47DP/Dise%C3%B1ar-pantalla-principal-Dashboard |
 | **Archivo de Figma** (7 pantallas, solo lectura) | https://www.figma.com/design/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A |
 | **Prototipo navegable** (Figma Prototype) | https://www.figma.com/proto/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A?node-id=1-23&starting-point-node-id=1-23&scaling=contain |
 | **Prototipo ejecutable en navegador** | [`entregables/05_prototipo_navegable/index.html`](entregables/05_prototipo_navegable/index.html) |
-| **Informe consolidado (PDF, 65 pp.)** | [`entregables/06_documento_consolidado/`](entregables/06_documento_consolidado) |
+| **Informe consolidado (PDF, 66 pp.)** | [`entregables/06_documento_consolidado/`](entregables/06_documento_consolidado) |
 | **Guion de la exposición en vídeo** | [`entregables/07_guion_exposicion/`](entregables/07_guion_exposicion) |
 | **Wireframe en PlantUML** | [`entregables/03_wireframe_salt/`](entregables/03_wireframe_salt) |
 
@@ -111,7 +112,7 @@ S4/
 1. **Prototipo:** abrir el enlace de Figma Prototype, o bien
    `entregables/05_prototipo_navegable/index.html` en el navegador (ventana maximizada, zoom 100 %).
 2. **Informe:** `entregables/06_documento_consolidado/Informe_Lab04_Prototipado_Interfaces_EquipoA.pdf`
-   (65 páginas, formato APA 7).
+   (66 páginas, formato APA 7).
 3. **Vídeo:** seguir el guion de `entregables/07_guion_exposicion/`. Son 12 bloques repartidos entre
    los once integrantes, ninguno de más de 3 minutos; cada bloque indica qué decir y qué mostrar en
    pantalla.
@@ -120,9 +121,9 @@ S4/
 
 ## 🧪 Sobre Figma Make
 
-Los seis prompts hiperdetallados se ejecutaron en **Figma Make**. La herramienta generó tres pantallas completas: el **Dashboard** (2 min 38 s), la **Watchlist** y la **pantalla de ejecución de órdenes** (7 min 52 s, en la misma pasada en la que corrigió el gráfico de velas que en la primera generación había quedado vacío). Las capturas están en [`04_prototipo_alta_fidelidad/figma_make/`](entregables/04_prototipo_alta_fidelidad/figma_make).
+Los prompts hiperdetallados se ejecutaron en **Figma Make**, que generó **cuatro pantallas completas y navegables**: Dashboard (2 min 38 s), Watchlist, Ejecución de órdenes (7 min 52 s, en la misma pasada en que corrigió el gráfico de velas que había quedado vacío) y Leaderboard (5 min 53 s, a partir del prompt propio del equipo). La aplicación está publicada en https://auburn-squid-75629760.figma.site/ y las capturas en [`04_prototipo_alta_fidelidad/figma_make/`](entregables/04_prototipo_alta_fidelidad/figma_make).
 
-Las tres restantes (móvil, modo oscuro y leaderboard) no se generaron con la herramienta: el **plan gratuito de Figma concede alrededor de una generación de IA al día**, de modo que completarlas exigiría tres días más o una licencia de pago. Por eso el equipo implementó las seis pantallas a partir de los mismos prompts y las consolidó en el archivo de Figma que se entrega; la salida de Make se conserva como evidencia del Paso 4 y como punto de comparación. Todo esto está documentado en la sección 7.1 del informe.
+**Faltan dos pantallas por generar con la herramienta** (versión móvil y modo oscuro): el plan gratuito de Figma concede un **cupo mensual** de créditos de IA que se agotó en la cuarta generación y **no se renueva hasta el 30 de septiembre de 2026**. Esas dos se implementaron a partir de los mismos prompts y se consolidaron, junto con las otras cuatro, en el archivo de Figma que se entrega. Todo el proceso, con tiempos y desviaciones, está documentado en la sección 7.1 del informe.
 
 ---
 

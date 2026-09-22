@@ -71,7 +71,7 @@ las tres aplicaciones publicadas de Figma Make, enlazadas arriba.
 ## Pendiente
 
 Grabar el vídeo de exposición siguiendo el guion de `07_guion_exposicion/`. El guion reparte la
-exposición en 12 bloques entre los once integrantes, con un máximo de 3 minutos por persona.
+exposición en 10 bloques, uno por expositor, con un máximo de 3 minutos por persona.
 
 > Nota: todas las cifras del prototipo son simuladas y tienen fines didácticos; no constituyen
 > información financiera real.

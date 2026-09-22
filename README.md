@@ -117,9 +117,8 @@ S4/
    Figma Make enlazadas arriba.
 3. **Informe:** `entregables/06_documento_consolidado/Informe_Lab04_Prototipado_Interfaces_EquipoA.pdf`,
    en formato APA 7.
-4. **Vídeo:** seguir el guion de `entregables/07_guion_exposicion/`. Son 12 bloques repartidos entre
-   los once integrantes, ninguno de más de 3 minutos; cada bloque indica qué decir y qué mostrar en
-   pantalla.
+4. **Vídeo:** seguir el guion de `entregables/07_guion_exposicion/`. Son 10 bloques, uno por
+   expositor, ninguno de más de 3 minutos; cada bloque indica qué decir y qué mostrar en pantalla.
 
 ---
 

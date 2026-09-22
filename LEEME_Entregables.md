@@ -27,7 +27,7 @@ Todos los enlaces de Figma están configurados como **cualquier persona con el e
 | 4 | Prototipo Figma (5 + 1 pantallas) | Enlace Figma (view) | Enlace arriba; los 6 prompts en `entregables/04_prototipo_alta_fidelidad/prompts/`; las 6 salidas reales de Figma Make en `.../figma_make/` |
 | 5 | Prototipo navegable | Enlace Figma Prototype | Enlace arriba; las 10 conexiones y el mapa de flujo en `entregables/05_prototipo_navegable/` |
 | 6 | Prompt propio del equipo (Tarea A) | Texto en el documento | Sección 10.1 del informe y `.../prompts/Prompt_6_Leaderboard_TareaA_EquipoA.txt` |
-| 7 | Documento de entrega consolidado | PDF | `entregables/06_documento_consolidado/` (.pdf de 66 pp. y .docx editable) |
+| 7 | Documento de entrega consolidado | PDF | `entregables/06_documento_consolidado/` (.pdf de 63 pp. y .docx editable) |
 | — | Guion de la exposición en vídeo | — | `entregables/07_guion_exposicion/` (.docx y .pdf) |
 
 ## Estructura de carpetas

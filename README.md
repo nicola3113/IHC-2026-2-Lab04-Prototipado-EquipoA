@@ -22,7 +22,7 @@ prototipo navegable.
 | **Figma Make** (archivo con los prompts ejecutados) | https://www.figma.com/make/9DfvD19QGGffIGtJfe47DP/Dise%C3%B1ar-pantalla-principal-Dashboard |
 | **Archivo de diseño de Figma** (6 pantallas, solo lectura) | https://www.figma.com/design/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A |
 | **Prototipo navegable** (Figma Prototype) | https://www.figma.com/proto/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A?node-id=19-8&starting-point-node-id=19%3A8&scaling=contain |
-| **Informe consolidado (PDF, 66 pp.)** | [`entregables/06_documento_consolidado/`](entregables/06_documento_consolidado) |
+| **Informe consolidado (PDF, 63 pp.)** | [`entregables/06_documento_consolidado/`](entregables/06_documento_consolidado) |
 | **Guion de la exposición en vídeo** | [`entregables/07_guion_exposicion/`](entregables/07_guion_exposicion) |
 | **Wireframe en PlantUML** | [`entregables/03_wireframe_salt/`](entregables/03_wireframe_salt) |
 

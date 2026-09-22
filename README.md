@@ -17,10 +17,11 @@ prototipo navegable.
 | Recurso | Enlace |
 |---|---|
 | **App generada con Figma Make** (navegable, 4 pantallas) | https://auburn-squid-75629760.figma.site/ |
+| **Dashboard en modo oscuro** (Figma Make) | https://scheme-open-12953100.figma.site/ |
+| **Versión móvil del portafolio** (Figma Make) | https://blurry-slab-37286964.figma.site/ |
 | **Figma Make** (archivo con los prompts ejecutados) | https://www.figma.com/make/9DfvD19QGGffIGtJfe47DP/Dise%C3%B1ar-pantalla-principal-Dashboard |
-| **Archivo de Figma** (7 pantallas, solo lectura) | https://www.figma.com/design/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A |
-| **Prototipo navegable** (Figma Prototype) | https://www.figma.com/proto/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A?node-id=1-23&starting-point-node-id=1-23&scaling=contain |
-| **Prototipo ejecutable en navegador** | [`entregables/05_prototipo_navegable/index.html`](entregables/05_prototipo_navegable/index.html) |
+| **Archivo de diseño de Figma** (6 pantallas, solo lectura) | https://www.figma.com/design/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A |
+| **Prototipo navegable** (Figma Prototype) | https://www.figma.com/proto/5knvURBDiuYFFfjWi9aWve/Ernesto-Investing-AI---Prototipo-Lab-04---IHC-2026-2-Equipo-A?node-id=19-8&starting-point-node-id=19%3A8&scaling=contain |
 | **Informe consolidado (PDF, 66 pp.)** | [`entregables/06_documento_consolidado/`](entregables/06_documento_consolidado) |
 | **Guion de la exposición en vídeo** | [`entregables/07_guion_exposicion/`](entregables/07_guion_exposicion) |
 | **Wireframe en PlantUML** | [`entregables/03_wireframe_salt/`](entregables/03_wireframe_salt) |
@@ -52,21 +53,20 @@ prototipo navegable.
 | 1 | Tabla comparativa de 4 plataformas + capturas anotadas | [`01_analisis_referencia/`](entregables/01_analisis_referencia) · Tabla 3 y Figuras 1-4 del informe |
 | 2 | 11 bocetos en papel, ganador marcado | [`02_bocetos_papel/`](entregables/02_bocetos_papel) |
 | 3 | Wireframe PlantUML Salt (.puml + PNG + SVG) | [`03_wireframe_salt/`](entregables/03_wireframe_salt) |
-| 4 | Prototipo de alta fidelidad (5 + 1 pantallas) + los 6 prompts + salida de Figma Make | [`04_prototipo_alta_fidelidad/`](entregables/04_prototipo_alta_fidelidad) |
-| 5 | Prototipo navegable | [`05_prototipo_navegable/`](entregables/05_prototipo_navegable) + enlace de Figma |
+| 4 | Prototipo de alta fidelidad (5 + 1 pantallas) + los 6 prompts + las 6 salidas de Figma Make | [`04_prototipo_alta_fidelidad/`](entregables/04_prototipo_alta_fidelidad) |
+| 5 | Prototipo navegable: 10 conexiones sobre las 6 pantallas | Enlace de Figma Prototype (arriba) · mapa de flujo y detalle en [`05_prototipo_navegable/`](entregables/05_prototipo_navegable) |
 | 6 | Prompt propio del equipo (Tarea A — Leaderboard) | [`prompts/Prompt_6_Leaderboard_TareaA_EquipoA.txt`](entregables/04_prototipo_alta_fidelidad/prompts/Prompt_6_Leaderboard_TareaA_EquipoA.txt) |
 | 7 | Documento consolidado (PDF + DOCX) | [`06_documento_consolidado/`](entregables/06_documento_consolidado) |
 | — | Guion de la exposición en vídeo | [`07_guion_exposicion/`](entregables/07_guion_exposicion) |
 
 ---
 
-## 🖥️ Las siete pantallas
+## 🖥️ Las seis pantallas
 
 | Frame | Contenido |
 |---|---|
 | **01** Dashboard principal (tema claro) | 4 tarjetas KPI, gráfico de velas con selector de periodo, Top Movers con sparklines y tabla de posiciones |
 | **02** Watchlist y alertas | Cuadrícula de 9 activos, filtros y panel de alertas activas |
-| **02b** Watchlist — modal | Cuadro de diálogo de creación de una nueva alerta de precio |
 | **03** Ejecución de órdenes | 3 columnas: ficha del activo y libro de órdenes, gráfico interactivo, formulario con validación en tiempo real |
 | **04** Versión móvil del portafolio | 3 vistas de 390 × 844 px conectadas por flujo |
 | **05** Dashboard en modo oscuro | Paleta GitHub Dark / TradingView Dark con contraste verificado |
@@ -97,8 +97,8 @@ S4/
 │   ├── 01_analisis_referencia/       4 figuras anotadas
 │   ├── 02_bocetos_papel/             11 bocetos
 │   ├── 03_wireframe_salt/            .puml / .png / .svg / URL
-│   ├── 04_prototipo_alta_fidelidad/  7 capturas + prompts/ + figma_make/
-│   ├── 05_prototipo_navegable/       index.html + 6 páginas + assets/
+│   ├── 04_prototipo_alta_fidelidad/  prompts/ (6 prompts) + figma_make/ (6 capturas)
+│   ├── 05_prototipo_navegable/       mapa de flujo + ENLACES.md
 │   ├── 06_documento_consolidado/     Informe .docx y .pdf
 │   └── 07_guion_exposicion/          Guion .docx y .pdf
 ├── LEEME_Entregables.md
@@ -109,11 +109,15 @@ S4/
 
 ## ▶️ Cómo revisar
 
-1. **Prototipo:** abrir el enlace de Figma Prototype, o bien
-   `entregables/05_prototipo_navegable/index.html` en el navegador (ventana maximizada, zoom 100 %).
-2. **Informe:** `entregables/06_documento_consolidado/Informe_Lab04_Prototipado_Interfaces_EquipoA.pdf`
-   (66 páginas, formato APA 7).
-3. **Vídeo:** seguir el guion de `entregables/07_guion_exposicion/`. Son 12 bloques repartidos entre
+1. **Prototipo:** abrir el enlace de Figma Prototype. Arranca en el Dashboard; desde ahí se llega a
+   la Watchlist (menú lateral), a la Ejecución de órdenes (tabla de posiciones o tarjeta de activo),
+   al modo oscuro (ícono de configuración) y al Leaderboard (ícono de trofeo). El logotipo de la
+   barra superior devuelve siempre al Dashboard.
+2. **Interacción real:** para probar filtros, pestañas y formularios, abrir las tres aplicaciones de
+   Figma Make enlazadas arriba.
+3. **Informe:** `entregables/06_documento_consolidado/Informe_Lab04_Prototipado_Interfaces_EquipoA.pdf`,
+   en formato APA 7.
+4. **Vídeo:** seguir el guion de `entregables/07_guion_exposicion/`. Son 12 bloques repartidos entre
    los once integrantes, ninguno de más de 3 minutos; cada bloque indica qué decir y qué mostrar en
    pantalla.
 
@@ -121,9 +125,33 @@ S4/
 
 ## 🧪 Sobre Figma Make
 
-Los prompts hiperdetallados se ejecutaron en **Figma Make**, que generó **cuatro pantallas completas y navegables**: Dashboard (2 min 38 s), Watchlist, Ejecución de órdenes (7 min 52 s, en la misma pasada en que corrigió el gráfico de velas que había quedado vacío) y Leaderboard (5 min 53 s, a partir del prompt propio del equipo). La aplicación está publicada en https://auburn-squid-75629760.figma.site/ y las capturas en [`04_prototipo_alta_fidelidad/figma_make/`](entregables/04_prototipo_alta_fidelidad/figma_make).
+**Las seis pantallas del laboratorio se generaron con Figma Make**, a partir de los seis prompts
+hiperdetallados que están en [`04_prototipo_alta_fidelidad/prompts/`](entregables/04_prototipo_alta_fidelidad/prompts).
+Las capturas de lo que devolvió la herramienta están en
+[`04_prototipo_alta_fidelidad/figma_make/`](entregables/04_prototipo_alta_fidelidad/figma_make).
 
-**Faltan dos pantallas por generar con la herramienta** (versión móvil y modo oscuro): el plan gratuito de Figma concede un **cupo mensual** de créditos de IA que se agotó en la cuarta generación y **no se renueva hasta el 30 de septiembre de 2026**. Esas dos se implementaron a partir de los mismos prompts y se consolidaron, junto con las otras cuatro, en el archivo de Figma que se entrega. Todo el proceso, con tiempos y desviaciones, está documentado en la sección 7.1 del informe.
+| # | Pantalla | Tiempo de generación | App publicada |
+|---|---|---|---|
+| 1 | Dashboard principal | 2 min 38 s | https://auburn-squid-75629760.figma.site/ |
+| 2 | Watchlist y alertas | misma sesión | https://auburn-squid-75629760.figma.site/ |
+| 3 | Ejecución de órdenes | 7 min 52 s | https://auburn-squid-75629760.figma.site/ |
+| 4 | Leaderboard (Tarea A) | 5 min 53 s | https://auburn-squid-75629760.figma.site/ |
+| 5 | Dashboard en modo oscuro | 2 min 41 s | https://scheme-open-12953100.figma.site/ |
+| 6 | Versión móvil del portafolio | 3 min 3 s | https://blurry-slab-37286964.figma.site/ |
+
+El plan gratuito de Figma reparte un **cupo mensual** de créditos de IA que se agotó en la cuarta
+generación y no se renueva hasta el 30 de septiembre de 2026, así que las dos últimas pantallas se
+generaron al día siguiente con el crédito de otra integrante del equipo. Esa es la razón de que el
+trabajo se repartiera en tres días. El proceso completo, con tiempos, desviaciones y correcciones,
+está documentado en la sección 7.1 del informe.
+
+**Una limitación del plan gratuito:** el botón «Copy design», que vuelca el resultado de Make al
+lienzo de diseño como capas editables, pertenece al plan Professional («Can't copy design layers
+from Figma Make» en el plan Starter). Por eso el archivo de diseño contiene la captura a tamaño real
+de cada pantalla, encuadrada en un frame con su nombre, y las conexiones del prototipo se tendieron
+con diez zonas activas transparentes sobre los controles correspondientes. El detalle está en la
+sección 8 del informe.
+
 
 ---
 
